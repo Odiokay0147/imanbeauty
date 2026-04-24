@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imani's Beauty – Beauty • Fashion • Confidence</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-pale:#F5E8C7;--blush:#F5D6D6;--blush-deep:#E8B4B8;--cream:#FAF5EF;--black:#111010;--charcoal:#2A2A2A;--rose:#C27D88;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:'Lato',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(250,245,239,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);}
+.nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:0.25em;color:var(--black);cursor:pointer;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;position:relative;padding-bottom:2px;transition:color 0.3s;cursor:pointer;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:1.2rem;}
+.cart-btn{position:relative;background:none;border:1px solid var(--gold);width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;}
+.cart-btn:hover{background:var(--gold);}
+.cart-btn:hover svg{stroke:#fff;}
+.cart-btn svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;transition:stroke 0.3s;}
+.cart-count{position:absolute;top:-7px;right:-7px;background:var(--rose);color:#fff;width:18px;height:18px;border-radius:50%;font-size:0.55rem;display:flex;align-items:center;justify-content:center;}
+.nav-cta{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:transparent;border:1px solid var(--gold);padding:0.6rem 1.5rem;cursor:pointer;transition:all 0.3s;}
+.nav-cta:hover{background:var(--gold);color:#fff;}
+
+/* PAGES */
+.page{display:none;padding-top:72px;min-height:100vh;}
+.page.active{display:block;}
+
+/* HERO */
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;}
+.hero-left{background:var(--black);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 5rem;position:relative;overflow:hidden;}
+.hero-left::before{content:'IM';position:absolute;bottom:-4rem;right:-3rem;font-family:'Cinzel',serif;font-size:22rem;color:rgba(201,168,76,0.05);line-height:1;pointer-events:none;}
+.hero-tag{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:flex;align-items:center;gap:1rem;animation:fadeUp 0.8s ease both;}
+.hero-tag::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1.1;color:#fff;animation:fadeUp 0.8s 0.15s ease both;}
+.hero-title em{font-style:italic;color:var(--gold-light);display:block;}
+.hero-divider{width:60px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:2.5rem 0;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-sub{font-size:0.85rem;line-height:1.9;color:rgba(255,255,255,0.55);max-width:340px;letter-spacing:0.05em;animation:fadeUp 0.8s 0.45s ease both;}
+.hero-btns{display:flex;gap:1rem;margin-top:3rem;animation:fadeUp 0.8s 0.6s ease both;}
+.btn-primary{background:var(--gold);color:#fff;border:none;padding:0.95rem 2.5rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;display:inline-block;transition:all 0.3s;}
+.btn-primary:hover{background:var(--gold-light);color:var(--black);}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.25);padding:0.95rem 2rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;display:inline-block;transition:all 0.3s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-right{background:var(--blush);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;overflow:hidden;}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 30%,rgba(201,168,76,0.15) 0%,transparent 65%);}
+.hero-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;position:relative;z-index:1;padding:5rem 3rem 0;}
+.crown-svg{width:55px;animation:fadeDown 1s 0.2s ease both;}
+.hero-brand-display{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;letter-spacing:0.3em;color:var(--black);text-align:center;animation:fadeDown 1s 0.35s ease both;}
+.hero-brand-sub{font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:1rem;animation:fadeDown 1s 0.5s ease both;}
+.hero-brand-sub b{width:4px;height:4px;background:var(--gold);border-radius:50%;display:inline-block;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-top:1px solid rgba(201,168,76,0.2);margin-top:3rem;animation:fadeUp 1s 0.8s ease both;}
+.stat{padding:1.5rem 1rem;text-align:center;border-right:1px solid rgba(201,168,76,0.2);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);display:block;}
+.stat-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal);margin-top:0.3rem;display:block;}
+
+/* MARQUEE */
+.marquee-bar{background:var(--gold);padding:0.9rem 0;overflow:hidden;white-space:nowrap;}
+.marquee-track{display:inline-block;animation:marquee 25s linear infinite;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:#fff;}
+.marquee-track span{margin:0 2.5rem;}
+.md{color:rgba(255,255,255,0.5);}
+
+/* SECTIONS */
+.sec{padding:7rem 5rem;}
+.sec-hd{text-align:center;margin-bottom:4.5rem;}
+.eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--black);line-height:1.2;}
+.sec-title em{font-style:italic;color:var(--rose);}
+
+/* CATEGORIES */
+.cat-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1.5rem;}
+.cat-card{display:flex;flex-direction:column;align-items:center;gap:1.2rem;padding:2.5rem 1rem;background:#fff;border:1px solid rgba(201,168,76,0.15);cursor:pointer;transition:all 0.35s;position:relative;overflow:hidden;}
+.cat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;}
+.cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.cat-card:hover::after{transform:scaleX(1);}
+.cat-icon{width:48px;height:48px;stroke:var(--gold);fill:none;stroke-width:1.2;}
+.cat-name{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--charcoal);}
+
+/* PRODUCT CARD */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+.pgrid-4{grid-template-columns:repeat(4,1fr);}
+.pcard{background:#fff;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;border:1px solid rgba(201,168,76,0.08);}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(0,0,0,0.1);}
+.pbadge{position:absolute;top:1rem;left:1rem;z-index:2;background:var(--gold);color:#fff;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.7rem;}
+.pbadge.sale{background:var(--rose);}
+.pbadge.new{background:var(--black);}
+/* colour-coded category backgrounds */
+.pimg{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.pimg.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
+.pimg.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
+.pimg.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
+.pimg.c-nails{background:linear-gradient(135deg,#fce4ec,#e1bee7);}
+.pimg.c-clothing{background:linear-gradient(135deg,#e3f2fd,#bbdefb);}
+.pimg.c-shoes{background:linear-gradient(135deg,#fafafa,#f5e8c7);}
+.pimg-emoji{font-size:3.2rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.12));transition:transform 0.3s;}
+.pcard:hover .pimg-emoji{transform:scale(1.12);}
+.poverlay{position:absolute;inset:0;background:rgba(201,168,76,0.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;opacity:0;transition:opacity 0.3s;}
+.pcard:hover .poverlay{opacity:1;}
+.oadd{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.7);padding:0.7rem 1.8rem;background:transparent;cursor:pointer;transition:all 0.2s;}
+.oadd:hover{background:#fff;color:var(--gold);}
+.oview{font-size:0.65rem;color:rgba(255,255,255,0.8);text-decoration:underline;cursor:pointer;background:none;border:none;font-family:'Lato',sans-serif;letter-spacing:0.05em;}
+.pinfo{padding:1.3rem 1.5rem;}
+.pname{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--black);margin-bottom:0.25rem;}
+.pcat{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.4);margin-bottom:0.7rem;}
+.pfoot{display:flex;align-items:center;justify-content:space-between;}
+.pprice{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--gold);}
+.pstars{font-size:0.62rem;color:var(--gold);}
+
+/* SHOP PAGE */
+.shop-hero{background:var(--black);padding:4rem 5rem 3rem;text-align:center;}
+.shop-hero h1{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#fff;}
+.shop-hero h1 em{font-style:italic;color:var(--gold-light);}
+.shop-hero p{font-size:0.8rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;margin-top:0.8rem;}
+.shop-layout{display:grid;grid-template-columns:270px 1fr;}
+.sidebar{background:#fff;border-right:1px solid rgba(201,168,76,0.12);padding:2.5rem 2rem;position:sticky;top:72px;height:calc(100vh - 72px);overflow-y:auto;}
+.sidebar h3{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--charcoal);margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.2);}
+.fg{margin-bottom:2.5rem;}
+.fl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.5);margin-bottom:1rem;display:block;}
+.flist{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
+.fitem{display:flex;align-items:center;gap:0.7rem;cursor:pointer;padding:0.35rem 0;}
+.fitem input{accent-color:var(--gold);width:14px;height:14px;cursor:pointer;}
+.fitem label{font-size:0.75rem;color:var(--charcoal);cursor:pointer;flex:1;}
+.fitem .fc{font-size:0.6rem;color:rgba(42,42,42,0.4);}
+.price-slider{width:100%;accent-color:var(--gold);}
+.price-disp{font-size:0.75rem;color:var(--gold);letter-spacing:0.05em;margin-top:0.5rem;}
+.clear-btn{width:100%;padding:0.7rem;background:none;border:1px solid rgba(201,168,76,0.3);font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);cursor:pointer;transition:all 0.3s;margin-top:0.5rem;}
+.clear-btn:hover{background:var(--gold);color:#fff;}
+.products-area{padding:2.5rem 3rem;background:var(--cream);}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+.rcount{font-size:0.75rem;color:rgba(42,42,42,0.55);}
+.rcount strong{color:var(--charcoal);font-weight:400;}
+.sort-sel{background:#fff;border:1px solid rgba(201,168,76,0.25);color:var(--charcoal);padding:0.5rem 1rem;font-family:'Lato',sans-serif;font-size:0.72rem;cursor:pointer;outline:none;}
+.no-res{text-align:center;padding:5rem 2rem;}
+.no-res p{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(42,42,42,0.4);}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.15);}
+.pg-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,0.25);background:#fff;font-family:'Cinzel',serif;font-size:0.65rem;cursor:pointer;transition:all 0.2s;color:var(--charcoal);}
+.pg-btn:hover,.pg-btn.active{background:var(--gold);color:#fff;border-color:var(--gold);}
+.pg-btn.arrow{font-size:0.9rem;color:var(--gold);}
+
+/* DETAIL PAGE */
+.detail-wrap{padding:4rem 5rem;}
+.breadcrumb{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(42,42,42,0.45);margin-bottom:3rem;display:flex;align-items:center;gap:0.8rem;}
+.breadcrumb s{color:var(--gold);cursor:pointer;text-decoration:none;}
+.breadcrumb s:hover{text-decoration:underline;}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.dimg{height:500px;display:flex;align-items:center;justify-content:center;position:relative;font-size:8rem;}
+.dimg.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
+.dimg.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
+.dimg.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
+.dimg.c-nails{background:linear-gradient(135deg,#fce4ec,#e1bee7);}
+.dimg.c-clothing{background:linear-gradient(135deg,#e3f2fd,#bbdefb);}
+.dimg.c-shoes{background:linear-gradient(135deg,#fafafa,#f5e8c7);}
+.dbadge{position:absolute;top:1.5rem;left:1.5rem;background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 0.9rem;}
+.dbadge.sale{background:var(--rose);}
+.dcat{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.dname{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;color:var(--black);line-height:1.2;margin-bottom:1rem;}
+.dstars{color:var(--gold);font-size:0.8rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+.dstars span{font-size:0.7rem;color:rgba(42,42,42,0.5);}
+.dprice{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);margin-bottom:2rem;}
+.ddiv{height:1px;background:rgba(201,168,76,0.2);margin:1.5rem 0;}
+.ddesc{font-size:0.85rem;line-height:2;color:rgba(42,42,42,0.65);margin-bottom:2rem;}
+.qrow{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;}
+.qlbl{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.55);}
+.qctrl{display:flex;align-items:center;border:1px solid rgba(201,168,76,0.3);}
+.qbtn{width:38px;height:38px;background:none;border:none;font-size:1.1rem;color:var(--gold);cursor:pointer;transition:background 0.2s;}
+.qbtn:hover{background:var(--gold-pale);}
+.qnum{width:40px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--charcoal);}
+.atc-btn{width:100%;padding:1.1rem;background:var(--black);color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-bottom:1rem;}
+.atc-btn:hover{background:var(--gold);}
+.wl-btn{width:100%;padding:1rem;background:transparent;color:var(--charcoal);border:1px solid rgba(201,168,76,0.3);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
+.wl-btn:hover{border-color:var(--rose);color:var(--rose);}
+.dfeats{margin-top:2rem;display:flex;flex-direction:column;gap:0.7rem;}
+.dfeat{display:flex;align-items:center;gap:0.7rem;font-size:0.75rem;color:rgba(42,42,42,0.6);}
+.dfeat::before{content:'✦';color:var(--gold);font-size:0.5rem;}
+
+/* RELATED */
+.related{padding:4rem 5rem;background:#fff;border-top:1px solid rgba(201,168,76,0.1);}
+.related h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--black);margin-bottom:2rem;}
+
+/* CART PAGE */
+.cart-wrap{padding:4rem 5rem;}
+.cart-wrap h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--black);margin-bottom:0.5rem;}
+.cart-layout{display:grid;grid-template-columns:1fr 360px;gap:4rem;margin-top:3rem;align-items:start;}
+.cart-list{display:flex;flex-direction:column;}
+.ci{display:grid;grid-template-columns:100px 1fr auto;gap:2rem;align-items:center;padding:1.8rem 0;border-bottom:1px solid rgba(201,168,76,0.12);}
+.ci-img{width:100px;height:100px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:2.5rem;border-radius:4px;}
+.ci-img.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
+.ci-img.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
+.ci-img.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
+.ci-img.c-nails{background:linear-gradient(135deg,#fce4ec,#e1bee7);}
+.ci-img.c-clothing{background:linear-gradient(135deg,#e3f2fd,#bbdefb);}
+.ci-img.c-shoes{background:linear-gradient(135deg,#fafafa,#f5e8c7);}
+.ci-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--black);margin-bottom:0.3rem;}
+.ci-cat{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.4);margin-bottom:0.8rem;}
+.ci-price{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);}
+.ci-right{display:flex;flex-direction:column;align-items:flex-end;gap:1rem;}
+.ci-total{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--black);}
+.rm-btn{background:none;border:none;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(42,42,42,0.35);cursor:pointer;transition:color 0.3s;}
+.rm-btn:hover{color:var(--rose);}
+.empty-cart{text-align:center;padding:6rem 2rem;}
+.empty-cart p{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:rgba(42,42,42,0.35);margin-bottom:2rem;}
+.os{background:#fff;border:1px solid rgba(201,168,76,0.15);padding:2.5rem;position:sticky;top:90px;}
+.os h3{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--charcoal);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+.os-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
+.os-lbl{font-size:0.78rem;color:rgba(42,42,42,0.6);}
+.os-val{font-size:0.85rem;color:var(--charcoal);}
+.os-div{height:1px;background:rgba(201,168,76,0.15);margin:1.5rem 0;}
+.os-total .os-lbl{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;}
+.os-total .os-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);}
+.co-btn{width:100%;padding:1.1rem;background:var(--gold);color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:2rem;}
+.co-btn:hover{background:var(--black);}
+.promo-row{display:flex;gap:0.5rem;margin-bottom:1.5rem;}
+.promo-in{flex:1;background:var(--cream);border:1px solid rgba(201,168,76,0.25);padding:0.6rem 0.8rem;font-family:'Lato',sans-serif;font-size:0.72rem;outline:none;color:var(--charcoal);}
+.promo-btn{background:none;border:1px solid var(--gold);color:var(--gold);padding:0.6rem 1rem;font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
+.promo-btn:hover{background:var(--gold);color:#fff;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem;}
+.tc{padding:2.5rem;border:1px solid rgba(201,168,76,0.15);position:relative;}
+.tc::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(201,168,76,0.12);position:absolute;top:0.5rem;left:1.5rem;line-height:1;}
+.tc-txt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;line-height:1.7;color:var(--charcoal);margin-bottom:1.5rem;}
+.tc-auth{display:flex;align-items:center;gap:1rem;}
+.tc-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--blush-deep));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:0.75rem;color:#fff;}
+.tc-name{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);}
+.tc-role{font-size:0.65rem;color:var(--gold);margin-top:0.15rem;}
+.stars{color:var(--gold);font-size:0.7rem;letter-spacing:0.1em;margin-bottom:1rem;}
+
+/* NEWSLETTER */
+.nl{background:var(--black);padding:6rem 5rem;text-align:center;position:relative;overflow:hidden;}
+.nl::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,0.07) 0%,transparent 65%);}
+.nl .sec-title{color:#fff;}
+.nl-sub{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-top:1rem;}
+.nl-form{display:flex;max-width:480px;margin:3rem auto 0;position:relative;z-index:1;}
+.nl-in{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(201,168,76,0.3);border-right:none;color:#fff;padding:1rem 1.5rem;font-family:'Lato',sans-serif;font-size:0.8rem;outline:none;}
+.nl-in::placeholder{color:rgba(255,255,255,0.3);}
+.nl-btn{background:var(--gold);color:#fff;border:none;padding:1rem 2rem;font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;}
+.nl-btn:hover{background:var(--gold-light);}
+
+/* FOOTER */
+footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.fb .nav-logo{display:block;margin-bottom:1rem;}
+.ftag{font-size:0.75rem;color:rgba(255,255,255,0.35);line-height:1.8;max-width:240px;margin-bottom:1.5rem;}
+.soc{display:flex;gap:0.8rem;}
+.sl{width:34px;height:34px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:0.7rem;transition:all 0.3s;cursor:pointer;}
+.sl:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+.fc-col h4{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:1.5rem;}
+.fl2{list-style:none;display:flex;flex-direction:column;gap:0.8rem;}
+.fl2 a{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.3s;cursor:pointer;}
+.fl2 a:hover{color:var(--gold);}
+.fb2{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;}
+.fcopy{font-size:0.68rem;color:rgba(255,255,255,0.2);}
+.fcopy span{color:var(--gold);}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;z-index:500;background:var(--black);color:#fff;padding:1rem 1.8rem;display:flex;align-items:center;gap:1rem;transform:translateY(120%);opacity:0;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);min-width:280px;border-left:3px solid var(--gold);}
+.toast.show{transform:translateY(0);opacity:1;}
+.ti{color:var(--gold);}
+.tm{font-size:0.78rem;letter-spacing:0.05em;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.rv.vis{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* WHATSAPP FLOAT BUTTON */
+.wa-float{position:fixed;bottom:2rem;left:2rem;z-index:400;display:flex;flex-direction:column;align-items:flex-start;gap:0.6rem;}
+.wa-bubble{background:#25D366;color:#fff;border:none;border-radius:50px;padding:0.85rem 1.4rem;display:flex;align-items:center;gap:0.7rem;cursor:pointer;box-shadow:0 8px 30px rgba(37,211,102,0.4);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;text-decoration:none;}
+.wa-bubble:hover{background:#20b858;transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.5);}
+.wa-bubble svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+.wa-label{background:var(--black);color:var(--gold);font-family:'Lato',sans-serif;font-size:0.68rem;letter-spacing:0.05em;padding:0.4rem 0.9rem;border-radius:4px;white-space:nowrap;animation:waPulse 2s ease-in-out infinite;}
+@keyframes waPulse{0%,100%{opacity:1}50%{opacity:0.6}}
+
+/* WHATSAPP ORDER MODAL */
+.wa-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;padding:1rem;}
+.wa-modal-bg.open{opacity:1;pointer-events:all;}
+.wa-modal{background:#fff;max-width:520px;width:100%;border-top:4px solid #25D366;position:relative;animation:fadeUp 0.4s ease both;}
+.wa-modal-head{background:var(--black);padding:2rem;display:flex;align-items:center;gap:1rem;}
+.wa-modal-head svg{width:32px;height:32px;fill:#25D366;flex-shrink:0;}
+.wa-modal-title{font-family:'Cinzel',serif;font-size:0.9rem;letter-spacing:0.2em;color:#fff;}
+.wa-modal-sub{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;}
+.wa-modal-body{padding:2rem;}
+.wa-field{margin-bottom:1.2rem;}
+.wa-field label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.55);display:block;margin-bottom:0.5rem;}
+.wa-field input,.wa-field textarea{width:100%;background:var(--cream);border:1px solid rgba(201,168,76,0.25);padding:0.8rem 1rem;font-family:'Lato',sans-serif;font-size:0.82rem;color:var(--charcoal);outline:none;resize:none;transition:border-color 0.3s;}
+.wa-field input:focus,.wa-field textarea:focus{border-color:var(--gold);}
+.wa-order-preview{background:var(--cream);border:1px solid rgba(201,168,76,0.2);padding:1.2rem;margin-bottom:1.5rem;max-height:180px;overflow-y:auto;}
+.wa-order-preview h4{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.wa-item-row{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--charcoal);padding:0.3rem 0;border-bottom:1px solid rgba(201,168,76,0.1);}
+.wa-item-row:last-child{border-bottom:none;}
+.wa-total-row{display:flex;justify-content:space-between;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(201,168,76,0.25);}
+.wa-send-btn{width:100%;padding:1rem;background:#25D366;color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:0.8rem;}
+.wa-send-btn:hover{background:#20b858;}
+.wa-send-btn svg{width:18px;height:18px;fill:#fff;}
+.wa-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.3rem;cursor:pointer;line-height:1;padding:0.3rem 0.5rem;}
+.wa-close:hover{color:#fff;}
+.wa-note{font-size:0.7rem;color:rgba(42,42,42,0.45);text-align:center;margin-top:1rem;line-height:1.6;}
+
+/* CHECKOUT CTA in cart */
+.wa-checkout-btn{width:100%;padding:1.1rem;background:#25D366;color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:1rem;display:flex;align-items:center;justify-content:center;gap:0.7rem;}
+.wa-checkout-btn:hover{background:#20b858;}
+.wa-checkout-btn svg{width:16px;height:16px;fill:#fff;}
+
+/* WHATSAPP FLOAT BUTTON */
+.wa-float{position:fixed;bottom:2rem;left:2rem;z-index:400;display:flex;flex-direction:column;align-items:flex-start;gap:0.6rem;}
+.wa-bubble{background:#25D366;color:#fff;border:none;border-radius:50px;padding:0.85rem 1.4rem;display:flex;align-items:center;gap:0.7rem;cursor:pointer;box-shadow:0 8px 30px rgba(37,211,102,0.4);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
+.wa-bubble:hover{background:#20b858;transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.5);}
+.wa-bubble svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+.wa-label{background:var(--black);color:var(--gold);font-family:'Lato',sans-serif;font-size:0.68rem;letter-spacing:0.05em;padding:0.4rem 0.9rem;border-radius:4px;white-space:nowrap;animation:waPulse 2s ease-in-out infinite;}
+@keyframes waPulse{0%,100%{opacity:1}50%{opacity:0.6}}
+.wa-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;padding:1rem;}
+.wa-modal-bg.open{opacity:1;pointer-events:all;}
+.wa-modal{background:#fff;max-width:520px;width:100%;border-top:4px solid #25D366;position:relative;animation:fadeUp 0.4s ease both;max-height:90vh;overflow-y:auto;}
+.wa-modal-head{background:var(--black);padding:2rem;display:flex;align-items:center;gap:1rem;position:sticky;top:0;z-index:1;}
+.wa-modal-head svg{width:32px;height:32px;fill:#25D366;flex-shrink:0;}
+.wa-modal-title{font-family:'Cinzel',serif;font-size:0.9rem;letter-spacing:0.2em;color:#fff;}
+.wa-modal-sub{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;}
+.wa-modal-body{padding:2rem;}
+.wa-field{margin-bottom:1.2rem;}
+.wa-field label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.55);display:block;margin-bottom:0.5rem;}
+.wa-field input,.wa-field textarea{width:100%;background:var(--cream);border:1px solid rgba(201,168,76,0.25);padding:0.8rem 1rem;font-family:'Lato',sans-serif;font-size:0.82rem;color:var(--charcoal);outline:none;resize:none;transition:border-color 0.3s;}
+.wa-field input:focus,.wa-field textarea:focus{border-color:var(--gold);}
+.wa-order-preview{background:var(--cream);border:1px solid rgba(201,168,76,0.2);padding:1.2rem;margin-bottom:1.5rem;max-height:160px;overflow-y:auto;}
+.wa-order-preview h4{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.wa-item-row{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--charcoal);padding:0.3rem 0;border-bottom:1px solid rgba(201,168,76,0.1);}
+.wa-item-row:last-child{border-bottom:none;}
+.wa-total-row{display:flex;justify-content:space-between;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(201,168,76,0.25);}
+.wa-send-btn{width:100%;padding:1rem;background:#25D366;color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:0.8rem;}
+.wa-send-btn:hover{background:#20b858;}
+.wa-send-btn svg{width:18px;height:18px;fill:#fff;}
+.wa-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:rgba(255,255,255,0.6);font-size:1.4rem;cursor:pointer;line-height:1;padding:0.3rem 0.5rem;z-index:2;}
+.wa-close:hover{color:#fff;}
+.wa-note{font-size:0.7rem;color:rgba(42,42,42,0.45);text-align:center;margin-top:1rem;line-height:1.6;}
+.wa-checkout-btn{width:100%;padding:1.05rem;background:#25D366;color:#fff;border:none;font-family:'Cinzel',serif;font-size:0.67rem;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.7rem;}
+.wa-checkout-btn:hover{background:#20b858;}
+.wa-checkout-btn svg{width:16px;height:16px;fill:#fff;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .shop-layout{grid-template-columns:1fr}
+  .sidebar{position:static;height:auto;display:flex;flex-wrap:wrap;gap:1.5rem}
+  .fg{flex:1;min-width:180px}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid-4{grid-template-columns:repeat(2,1fr)}
+  .dgrid{grid-template-columns:1fr;gap:3rem}
+  .cart-layout{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{min-height:50vh}
+  .sec,.shop-hero,.detail-wrap,.cart-wrap{padding-left:1.5rem;padding-right:1.5rem}
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+  .pgrid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr;gap:2rem}
+  .nl{padding:5rem 1.5rem}
+  .related{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="goPage('home')">IMANI<span>'S</span> BEAUTY</div>
+  <ul class="nav-links">
+    <li><a onclick="goPage('shop')">Shop All</a></li>
+    <li><a onclick="catGo('Makeup')">Makeup</a></li>
+    <li><a onclick="catGo('Skincare')">Skincare</a></li>
+    <li><a onclick="catGo('Hair')">Hair</a></li>
+    <li><a onclick="catGo('Clothing')">Fashion</a></li>
+    <li><a onclick="goPage('home');toReviews()">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="goPage('cart')">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <span class="nav-cta" onclick="goPage('shop')">Shop Now</span>
+  </div>
+</nav>
+
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-label">Order via WhatsApp ✦</div>
+  <button class="wa-bubble" onclick="openWaModal()">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Chat to Order
+  </button>
+</div>
+
+<!-- WHATSAPP MODAL -->
+<div class="wa-modal-bg" id="waModalBg" onclick="handleWaBgClick(event)">
+  <div class="wa-modal">
+    <div class="wa-modal-head">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <div>
+        <div class="wa-modal-title">Order via WhatsApp</div>
+        <div class="wa-modal-sub">We'll confirm your order & arrange delivery</div>
+      </div>
+      <button class="wa-close" onclick="closeWaModal()">✕</button>
+    </div>
+    <div class="wa-modal-body">
+      <div class="wa-order-preview">
+        <h4>Your Order Summary</h4>
+        <div id="waItemsList"><p style="font-size:0.78rem;color:rgba(42,42,42,0.4)">Add products to your cart first, then come back here to order!</p></div>
+        <div class="wa-total-row" id="waTotalRow" style="display:none"><span>Total</span><span id="waTotal"></span></div>
+      </div>
+      <div class="wa-field">
+        <label>Your Name *</label>
+        <input type="text" id="waName" placeholder="e.g. Amara Johnson">
+      </div>
+      <div class="wa-field">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="waPhone" placeholder="e.g. +1 234 567 8900">
+      </div>
+      <div class="wa-field">
+        <label>Delivery Address *</label>
+        <textarea id="waAddress" rows="2" placeholder="Street, City, Postal Code"></textarea>
+      </div>
+      <div class="wa-field">
+        <label>Special Requests (optional)</label>
+        <textarea id="waNotes" rows="2" placeholder="e.g. colour preference, gift wrapping, size…"></textarea>
+      </div>
+      <button class="wa-send-btn" onclick="sendWhatsApp()">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Send Order on WhatsApp
+      </button>
+      <p class="wa-note">Tapping the button opens WhatsApp with your full order pre-written. We reply within 1–2 hours to confirm & arrange payment. 💛</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="ti">✦</span><span class="tm" id="toastMsg"></span></div>
+
+<!-- ════════ HOME ════════ -->
+<div id="pg-home" class="page active">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Est. 2024 — Premium Beauty</div>
+      <h1 class="hero-title">Beauty is<br><em>Your Confidence</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Curated beauty, fashion & skincare essentials for the modern woman who deserves to feel extraordinary every day.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="goPage('shop')">Shop Collection</button>
+        <button class="btn-ghost" onclick="document.getElementById('habout').scrollIntoView({behavior:'smooth'})">Our Story</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-inner">
+        <svg class="crown-svg" viewBox="0 0 60 42" fill="none">
+          <path d="M5 38L10 15L22 28L30 8L38 28L50 15L55 38H5Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="5" cy="14" r="3" fill="#C9A84C"/><circle cx="30" cy="5" r="3" fill="#C9A84C"/><circle cx="55" cy="14" r="3" fill="#C9A84C"/>
+          <line x1="5" y1="40" x2="55" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
+        </svg>
+        <div class="hero-brand-display">IMANI'S</div>
+        <div class="hero-brand-sub">Beauty <b></b> Fashion <b></b> Confidence</div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Products</span></div>
+          <div class="stat"><span class="stat-num">10K+</span><span class="stat-label">Clients</span></div>
+          <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-bar"><div class="marquee-track">
+    <span>Beauty</span><span class="md">✦</span><span>Fashion</span><span class="md">✦</span><span>Confidence</span><span class="md">✦</span><span>Skincare</span><span class="md">✦</span><span>Makeup</span><span class="md">✦</span><span>Hair Care</span><span class="md">✦</span><span>Nails</span><span class="md">✦</span><span>Shoes</span><span class="md">✦</span><span>Clothing</span><span class="md">✦</span>
+    <span>Beauty</span><span class="md">✦</span><span>Fashion</span><span class="md">✦</span><span>Confidence</span><span class="md">✦</span><span>Skincare</span><span class="md">✦</span><span>Makeup</span><span class="md">✦</span><span>Hair Care</span><span class="md">✦</span><span>Nails</span><span class="md">✦</span><span>Shoes</span><span class="md">✦</span><span>Clothing</span><span class="md">✦</span>
+  </div></div>
+
+  <section class="sec">
+    <div class="sec-hd rv"><span class="eyebrow">Explore</span><h2 class="sec-title">Shop by <em>Category</em></h2></div>
+    <div class="cat-grid">
+      <div class="cat-card rv d1" onclick="catGo('Clothing')"><svg class="cat-icon" viewBox="0 0 48 48"><path d="M16 8L8 16v6h8v18h16V22h8v-6L32 8l-4 4c-1.1 1.1-2.9 1.1-4 0L16 8z"/></svg><span class="cat-name">Clothing</span></div>
+      <div class="cat-card rv d2" onclick="catGo('Nails')"><svg class="cat-icon" viewBox="0 0 48 48"><rect x="14" y="8" width="8" height="22" rx="4"/><rect x="26" y="12" width="8" height="18" rx="4"/><path d="M10 32h28v8H10z"/></svg><span class="cat-name">Nails</span></div>
+      <div class="cat-card rv d3" onclick="catGo('Makeup')"><svg class="cat-icon" viewBox="0 0 48 48"><rect x="20" y="6" width="8" height="24" rx="4"/><ellipse cx="24" cy="34" rx="10" ry="6"/><path d="M14 34v4a10 6 0 0020 0v-4"/></svg><span class="cat-name">Makeup</span></div>
+      <div class="cat-card rv d4" onclick="catGo('Hair')"><svg class="cat-icon" viewBox="0 0 48 48"><circle cx="24" cy="14" r="8"/><path d="M16 22c-6 4-8 12-6 20M32 22c6 4 8 12 6 20M20 42c2-6 4-10 4-18M28 42c-2-6-4-10-4-18"/></svg><span class="cat-name">Hair</span></div>
+      <div class="cat-card rv" onclick="catGo('Skincare')"><svg class="cat-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="14" ry="12"/><path d="M16 20c0-8 16-8 16 0"/><circle cx="20" cy="26" r="2"/><circle cx="28" cy="26" r="2"/><path d="M20 32c1.5 2 6.5 2 8 0"/></svg><span class="cat-name">Skincare</span></div>
+      <div class="cat-card rv d1" onclick="catGo('Shoes')"><svg class="cat-icon" viewBox="0 0 48 48"><path d="M8 34c0 0 6-8 14-8 4 0 8 2 12 2s8-2 8-2v4c0 0-4 2-8 2s-8-2-12-2c-4 0-8 4-8 4H8v-4z"/><path d="M22 26V14c0-2 2-4 4-4h4l2 16"/></svg><span class="cat-name">Shoes</span></div>
+      <div class="cat-card rv d2" onclick="goPage('shop')"><svg class="cat-icon" viewBox="0 0 48 48"><path d="M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16S32.8 8 24 8z"/><path d="M24 8v6M24 34v6M8 24h6M34 24h6"/></svg><span class="cat-name">& More</span></div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section style="background:var(--black);padding:7rem 5rem">
+    <div class="sec-hd rv"><span class="eyebrow" style="color:var(--gold-light)">New In</span><h2 class="sec-title" style="color:#fff">Featured <em style="color:var(--blush-deep)">Picks</em></h2></div>
+    <div class="pgrid pgrid-4" style="margin-top:3rem" id="homeGrid"></div>
+    <div style="text-align:center;margin-top:3rem"><button class="btn-primary" onclick="goPage('shop')">View All 120+ Products</button></div>
+  </section>
+
+  <!-- About -->
+  <section id="habout" style="display:grid;grid-template-columns:1fr 1fr;min-height:550px">
+    <div style="background:var(--blush);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem">
+      <div style="position:absolute;width:380px;height:380px;border:1px solid rgba(201,168,76,0.25);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+      <div style="position:absolute;width:260px;height:260px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+      <div style="font-family:'Cinzel',serif;font-size:7rem;font-weight:400;background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;z-index:1;line-height:1">IM</div>
+    </div>
+    <div style="padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center">
+      <span class="eyebrow rv" style="text-align:left">Our Story</span>
+      <h2 class="sec-title rv" style="text-align:left">More than <em>Beauty</em></h2>
+      <p class="rv" style="font-size:0.85rem;line-height:2;color:rgba(42,42,42,0.65);margin-top:1.8rem;max-width:420px">Imani's Beauty was born from a simple belief: every woman deserves access to premium beauty and fashion that makes her feel powerful, seen, and radiant. We handpick every product with care, quality, and confidence in mind.</p>
+      <div class="rv" style="display:flex;gap:2.5rem;margin-top:2.5rem">
+        <div><span style="color:var(--gold)">✦</span><div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.15em;color:var(--charcoal);margin-top:0.4rem">Premium Quality</div></div>
+        <div><span style="color:var(--gold)">♡</span><div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.15em;color:var(--charcoal);margin-top:0.4rem">With Love</div></div>
+        <div><span style="color:var(--gold)">◆</span><div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.15em;color:var(--charcoal);margin-top:0.4rem">Confidence First</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="sec" style="background:#fff" id="rev-anchor">
+    <div class="sec-hd rv"><span class="eyebrow">Reviews</span><h2 class="sec-title">What Our <em>Queens</em> Say</h2></div>
+    <div class="tgrid">
+      <div class="tc rv d1"><div class="stars">★★★★★</div><p class="tc-txt">Imani's Beauty has completely transformed my routine. The quality is unmatched and I always feel so glamorous.</p><div class="tc-auth"><div class="tc-av">A</div><div><div class="tc-name">Amara J.</div><div class="tc-role">Loyal Customer</div></div></div></div>
+      <div class="tc rv d2"><div class="stars">★★★★★</div><p class="tc-txt">The skincare products are absolutely divine. My skin has never looked better. I recommend Imani's to everyone!</p><div class="tc-auth"><div class="tc-av">Z</div><div><div class="tc-name">Zara M.</div><div class="tc-role">Beauty Enthusiast</div></div></div></div>
+      <div class="tc rv d3"><div class="stars">★★★★★</div><p class="tc-txt">From the packaging to the products, everything screams luxury. I felt like royalty from the moment it arrived.</p><div class="tc-auth"><div class="tc-av">N</div><div><div class="tc-name">Nia K.</div><div class="tc-role">Fashion Lover</div></div></div></div>
+    </div>
+  </section>
+
+  <section class="nl">
+    <div style="position:relative;z-index:1"><span class="eyebrow" style="color:var(--gold-light)">Stay Connected</span><h2 class="sec-title">Join the <em style="color:var(--blush-deep)">Inner Circle</em></h2><p class="nl-sub">Exclusive offers, new arrivals & beauty tips delivered to you.</p></div>
+    <div class="nl-form"><input type="email" class="nl-in" placeholder="Your email address" id="nlIn"><button class="nl-btn" onclick="doNl()">Subscribe</button></div>
+  </section>
+
+  <footer>
+    <div class="ft">
+      <div class="fb"><span class="nav-logo" onclick="goPage('home')">IMANI<span style="color:var(--gold)">'S</span> BEAUTY</span><p class="ftag">Beauty • Fashion • Confidence — everything a queen needs.</p><div class="soc"><div class="sl">f</div><div class="sl">ig</div><div class="sl">tw</div><div class="sl">yt</div></div></div>
+      <div class="fc-col"><h4>Shop</h4><ul class="fl2"><li><a onclick="catGo('Makeup')">Makeup</a></li><li><a onclick="catGo('Skincare')">Skincare</a></li><li><a onclick="catGo('Hair')">Hair Care</a></li><li><a onclick="catGo('Nails')">Nails</a></li><li><a onclick="catGo('Clothing')">Clothing</a></li><li><a onclick="catGo('Shoes')">Shoes</a></li></ul></div>
+      <div class="fc-col"><h4>Company</h4><ul class="fl2"><li><a>About Us</a></li><li><a>Our Story</a></li><li><a>Careers</a></li><li><a>Press</a></li></ul></div>
+      <div class="fc-col"><h4>Support</h4><ul class="fl2"><li><a>FAQ</a></li><li><a>Shipping</a></li><li><a>Returns</a></li><li><a>Contact Us</a></li><li><a>Privacy Policy</a></li></ul></div>
+    </div>
+    <div class="fb2"><p class="fcopy">© 2025 <span>Imani's Beauty</span>. All rights reserved.</p><p class="fcopy">Made with ♡ for every queen</p></div>
+  </footer>
+</div>
+
+<!-- ════════ SHOP ════════ -->
+<div id="pg-shop" class="page">
+  <div class="shop-hero"><span class="eyebrow" style="color:var(--gold-light)">Our Collection</span><h1>Shop <em>All Products</em></h1><p>120+ premium essentials across 6 categories</p></div>
+  <div class="shop-layout">
+    <aside class="sidebar">
+      <h3>Filter & Refine</h3>
+      <div class="fg"><span class="fl">Category</span><ul class="flist" id="catFilters"></ul></div>
+      <div class="fg"><span class="fl">Price Range</span><input type="range" class="price-slider" id="priceSlider" min="0" max="200" value="200" oninput="onPrice(this.value)"><div class="price-disp" id="pDisp">Up to $200.00</div></div>
+      <div class="fg"><span class="fl">Rating</span><ul class="flist"><li class="fitem"><input type="checkbox" id="r5" onchange="renderShop()"><label for="r5">★★★★★ 5 stars</label></li><li class="fitem"><input type="checkbox" id="r4" onchange="renderShop()"><label for="r4">★★★★☆ 4+ stars</label></li></ul></div>
+      <div class="fg"><span class="fl">Badge</span><ul class="flist"><li class="fitem"><input type="checkbox" id="fNew" onchange="renderShop()"><label for="fNew">New Arrivals</label></li><li class="fitem"><input type="checkbox" id="fSale" onchange="renderShop()"><label for="fSale">On Sale</label></li><li class="fitem"><input type="checkbox" id="fBest" onchange="renderShop()"><label for="fBest">Bestsellers</label></li></ul></div>
+      <button class="clear-btn" onclick="clearF()">Clear All Filters</button>
+    </aside>
+    <div class="products-area">
+      <div class="toolbar"><span class="rcount" id="rcount"></span><select class="sort-sel" id="sortSel" onchange="renderShop()"><option value="default">Sort: Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="rating">Top Rated</option><option value="newest">Newest</option></select></div>
+      <div class="pgrid" id="shopGrid"></div>
+      <div class="no-res" id="noRes" style="display:none"><p>No products found. Try adjusting filters.</p></div>
+      <div class="pagination" id="pgBar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ DETAIL ════════ -->
+<div id="pg-detail" class="page">
+  <div class="detail-wrap">
+    <div class="breadcrumb"><s onclick="goPage('home')">Home</s> / <s onclick="goPage('shop')">Shop</s> / <span id="dcrumb">Product</span></div>
+    <div class="dgrid">
+      <div><div class="dimg" id="dimg"><span id="demoji" style="filter:drop-shadow(0 8px 24px rgba(0,0,0,0.15))"></span><div class="dbadge" id="dbadge"></div></div></div>
+      <div>
+        <div class="dcat" id="dcat"></div>
+        <h1 class="dname" id="dname"></h1>
+        <div class="dstars" id="dstars"></div>
+        <div class="dprice" id="dprice"></div>
+        <div class="ddiv"></div>
+        <p class="ddesc" id="ddesc"></p>
+        <div class="qrow"><span class="qlbl">Quantity</span><div class="qctrl"><button class="qbtn" onclick="dq(-1)">−</button><span class="qnum" id="qnum">1</span><button class="qbtn" onclick="dq(1)">+</button></div></div>
+        <button class="atc-btn" onclick="addCurrent()">Add to Cart</button>
+        <button class="wl-btn">♡ Add to Wishlist</button>
+        <div class="dfeats"><div class="dfeat">Free delivery on orders over $50</div><div class="dfeat">Premium quality, handpicked</div><div class="dfeat">Easy 30-day returns</div><div class="dfeat">Authentic & cruelty-free</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="related"><h3>You May Also <em style="font-style:italic;color:var(--rose)">Love</em></h3><div class="pgrid pgrid-4" id="relGrid"></div></div>
+</div>
+
+<!-- ════════ CART ════════ -->
+<div id="pg-cart" class="page">
+  <div class="cart-wrap">
+    <span class="eyebrow">Your Selection</span>
+    <h1>Shopping Cart</h1>
+    <div class="cart-layout">
+      <div><div class="cart-list" id="cartList"></div><div class="empty-cart" id="emptyCart" style="display:none"><p>Your cart is empty</p><button class="btn-primary" onclick="goPage('shop')">Browse Products</button></div></div>
+      <div class="os">
+        <h3>Order Summary</h3>
+        <div class="os-row"><span class="os-lbl">Subtotal</span><span class="os-val" id="oSub">$0.00</span></div>
+        <div class="os-row"><span class="os-lbl">Shipping</span><span class="os-val" id="oShip">—</span></div>
+        <div class="os-row"><span class="os-lbl">Discount</span><span class="os-val" id="oDisc">—</span></div>
+        <div class="os-div"></div>
+        <div class="os-row os-total"><span class="os-lbl">Total</span><span class="os-val" id="oTotal">$0.00</span></div>
+        <div class="promo-row"><input class="promo-in" placeholder="Promo code (try IMANI10)" id="promoIn"><button class="promo-btn" onclick="applyPromo()">Apply</button></div>
+        <button class="co-btn" onclick="checkout()">Proceed to Checkout</button>
+        <button class="wa-checkout-btn" onclick="openWaModal()">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════
+// PRODUCT DATA — 20+ per category
+// ════════════════════════════════
+const products = [
+  // ── MAKEUP (22 items) ──
+  {id:101,name:'Velvet Matte Lipstick',cat:'Makeup',price:24.99,rating:5,reviews:148,badge:'Bestseller',newest:false,emoji:'💄',desc:'A richly pigmented matte lipstick with long-lasting wear and a velvety finish. Stays comfortable all day. Available in 12 stunning shades perfect for every skin tone.'},
+  {id:102,name:'Golden Hour Eyeshadow Palette',cat:'Makeup',price:45.00,rating:5,reviews:212,badge:'New',newest:true,emoji:'🎨',desc:'18 stunning warm-toned shades in mattes, shimmers, and duochromes. Buttery smooth formula with intense pigmentation that blends effortlessly for any look.'},
+  {id:103,name:'Flawless Foundation SPF30',cat:'Makeup',price:38.00,rating:5,reviews:189,badge:'Bestseller',newest:false,emoji:'🫙',desc:'Medium-to-full buildable coverage foundation with SPF30 sun protection. Suits all skin tones including deep and melanin-rich complexions. 40 shades available.'},
+  {id:104,name:'Glossy Lip Oil',cat:'Makeup',price:18.99,rating:4,reviews:97,badge:'New',newest:true,emoji:'✨',desc:'Nourishing lip oil that delivers brilliant gloss and deep hydration. Infused with vitamin E and jojoba oil for plump, juicy lips that shine all day.'},
+  {id:105,name:'Waterproof Mascara',cat:'Makeup',price:21.00,rating:5,reviews:265,badge:'Bestseller',newest:false,emoji:'🖤',desc:'Volumising and lengthening waterproof mascara that holds a curl for 24 hours. No smudging, no flaking — just bold, dramatic lashes from the first coat.'},
+  {id:106,name:'Sculpting Contour Stick',cat:'Makeup',price:29.00,rating:4,reviews:74,badge:'',newest:false,emoji:'🌙',desc:'A creamy, blendable contour stick in three universal shades. Defines cheekbones, nose, and jaw with a natural shadow effect. Sets to a long-wearing matte finish.'},
+  {id:107,name:'Luminous Highlighter',cat:'Makeup',price:32.00,rating:5,reviews:133,badge:'New',newest:true,emoji:'⭐',desc:'A finely-milled powder highlighter that gives an ethereal, lit-from-within glow. Buildable intensity from subtle daytime shimmer to blinding runway light.'},
+  {id:108,name:'Brow Definer Pencil',cat:'Makeup',price:16.99,rating:4,reviews:88,badge:'',newest:false,emoji:'✏️',desc:'Ultra-fine micro-pencil that mimics the look of natural brow hairs. Precise tip for hair-stroke definition. Includes a spoolie brush for blending and grooming.'},
+  {id:109,name:'Setting Spray 100ml',cat:'Makeup',price:22.00,rating:5,reviews:201,badge:'Bestseller',newest:false,emoji:'💧',desc:'A lightweight setting spray that locks makeup in place for up to 16 hours. Gives a fresh, dewy finish and reduces the powdery look of heavy makeup.'},
+  {id:110,name:'Satin Blush Palette',cat:'Makeup',price:35.00,rating:5,reviews:158,badge:'New',newest:true,emoji:'🌸',desc:'Six harmonious blush shades in a satin finish — from fresh peach to deep berry. Buildable from a natural flush to a bold statement. Suits all skin tones.'},
+  {id:111,name:'Liquid Eyeliner Pen',cat:'Makeup',price:15.99,rating:4,reviews:112,badge:'',newest:false,emoji:'🖊️',desc:'Precision felt-tip eyeliner pen for sharp winged looks or soft lash-line definition. Intense black pigment that dries instantly and stays put for 12+ hours.'},
+  {id:112,name:'Lip Liner Set (6 pcs)',cat:'Makeup',price:27.00,rating:4,reviews:65,badge:'Sale',newest:false,emoji:'🫦',desc:'Six essential lip liner shades from nude to deep plum. Long-wearing formula prevents feathering and can be used to fill in lips for an all-day matte look.'},
+  {id:113,name:'Concealer Wand',cat:'Makeup',price:23.00,rating:5,reviews:176,badge:'',newest:false,emoji:'🪄',desc:'Full-coverage concealer with a hydrating formula that does not crease. Covers dark circles, blemishes, and discolouration for a seamless, natural-looking finish.'},
+  {id:114,name:'Pressed Powder Compact',cat:'Makeup',price:19.99,rating:4,reviews:91,badge:'',newest:false,emoji:'🔮',desc:'Silky-smooth pressed powder that sets makeup and controls shine for 8 hours. Finely milled formula diffuses pores and leaves a flawless satin-matte complexion.'},
+  {id:115,name:'Tinted Moisturiser SPF20',cat:'Makeup',price:31.00,rating:5,reviews:144,badge:'New',newest:true,emoji:'🌿',desc:'A lightweight tinted moisturiser with SPF20 that gives a sheer, skin-like finish. Hydrates, protects, and evens out skin tone without the weight of foundation.'},
+  {id:116,name:'Glitter Eye Pigment',cat:'Makeup',price:17.00,rating:4,reviews:53,badge:'Sale',newest:false,emoji:'🌟',desc:'Loose glitter pigment in six vivid shades. Apply wet for maximum impact or dry for subtle sparkle. Ophthalmologist-tested and safe for use around the eye area.'},
+  {id:117,name:'Nude Lip Kit',cat:'Makeup',price:34.00,rating:5,reviews:109,badge:'Bestseller',newest:false,emoji:'💋',desc:'The perfect nude lip in one kit: includes a lip liner, liquid matte lipstick, and clear gloss. Mix and match for your ideal nude — from warm honey to cool beige.'},
+  {id:118,name:'Colour Correcting Palette',cat:'Makeup',price:28.00,rating:4,reviews:67,badge:'',newest:false,emoji:'🎭',desc:'Five correcting shades — green, peach, lavender, yellow, and salmon — to neutralise redness, dark circles, dullness, and discolouration before foundation.'},
+  {id:119,name:'Bronzer Duo',cat:'Makeup',price:26.99,rating:5,reviews:122,badge:'New',newest:true,emoji:'☀️',desc:'Two complementary bronzer shades — matte and shimmer — for a natural sun-kissed glow. The warm, buildable formula suits fair to deep complexions beautifully.'},
+  {id:120,name:'Full Face Brush Set (10 pcs)',cat:'Makeup',price:52.00,rating:5,reviews:198,badge:'Bestseller',newest:false,emoji:'🖌️',desc:'A professional 10-piece brush set including brushes for foundation, powder, blush, contour, and four eyeshadow brushes. Ultra-soft synthetic bristles.'},
+  {id:121,name:'Lash Primer',cat:'Makeup',price:14.99,rating:4,reviews:44,badge:'',newest:false,emoji:'👁️',desc:'A white lash-conditioning primer that nourishes and volumises lashes before mascara. Adds up to 50% more volume and helps mascara last longer without clumping.'},
+  {id:122,name:'Lip Plumping Gloss',cat:'Makeup',price:20.00,rating:4,reviews:78,badge:'Sale',newest:false,emoji:'💅',desc:'Tingling lip plumping gloss with hyaluronic acid and peptide complex. Visibly plumps lips in minutes with high-shine colour. Comfortable to wear all day long.'},
+
+  // ── SKINCARE (21 items) ──
+  {id:201,name:'Vitamin C Glow Serum',cat:'Skincare',price:48.00,rating:5,reviews:312,badge:'Bestseller',newest:false,emoji:'🍊',desc:'15% stabilised vitamin C brightening serum infused with hyaluronic acid and niacinamide. Visibly reduces dark spots and boosts radiance in just 2 weeks of daily use.'},
+  {id:202,name:'Hydrating Face Cream',cat:'Skincare',price:42.00,rating:5,reviews:267,badge:'Bestseller',newest:false,emoji:'🫙',desc:'24-hour moisture-lock cream enriched with shea butter, ceramides, and niacinamide. Restores your skin barrier and delivers intense, lasting hydration from first use.'},
+  {id:203,name:'Retinol Night Cream',cat:'Skincare',price:55.00,rating:5,reviews:189,badge:'New',newest:true,emoji:'🌙',desc:'Encapsulated 0.3% retinol night cream that reduces fine lines and wrinkles while you sleep. Combined with peptides and squalane for a gentle, non-irritating formula.'},
+  {id:204,name:'Gentle Foaming Cleanser',cat:'Skincare',price:28.00,rating:5,reviews:221,badge:'',newest:false,emoji:'🫧',desc:'A pH-balanced foaming cleanser that removes makeup, SPF, and impurities without stripping natural oils. Leaves skin clean, soft, and refreshed — never tight.'},
+  {id:205,name:'SPF50 Sunscreen Fluid',cat:'Skincare',price:34.00,rating:5,reviews:178,badge:'Bestseller',newest:false,emoji:'☀️',desc:'Lightweight SPF50 PA++++ sunscreen with a silky, invisible finish. Broad-spectrum protection against UVA, UVB, and blue light. No white cast — perfect for all tones.'},
+  {id:206,name:'Hyaluronic Acid Serum',cat:'Skincare',price:36.00,rating:5,reviews:288,badge:'Bestseller',newest:false,emoji:'💧',desc:'Triple-weight hyaluronic acid serum that attracts and retains moisture at every layer of the skin. Instantly plumps fine lines and leaves skin visibly hydrated.'},
+  {id:207,name:'Niacinamide 10% Toner',cat:'Skincare',price:24.00,rating:4,reviews:134,badge:'New',newest:true,emoji:'✨',desc:'10% niacinamide and 1% zinc toner that reduces enlarged pores, controls sebum production, and fades post-acne marks. Suitable for oily and combination skin types.'},
+  {id:208,name:'Clay Purifying Mask',cat:'Skincare',price:29.00,rating:4,reviews:101,badge:'',newest:false,emoji:'🌿',desc:'Deep-cleansing kaolin and bentonite clay mask that draws out impurities, tightens pores, and controls excess oil. Leaves skin smooth, bright, and deeply purified.'},
+  {id:209,name:'Rose Hip Face Oil',cat:'Skincare',price:38.00,rating:5,reviews:145,badge:'New',newest:true,emoji:'🌹',desc:'Cold-pressed 100% pure rosehip oil rich in vitamins A, C, and E. Fades scars, hyperpigmentation, and stretch marks while deeply nourishing and protecting skin.'},
+  {id:210,name:'Eye Cream with Caffeine',cat:'Skincare',price:32.00,rating:5,reviews:167,badge:'Bestseller',newest:false,emoji:'👁️',desc:'Caffeine-infused eye cream that depuffs, brightens dark circles, and firms the delicate eye area. Contains peptides and vitamin K for visible results in 4 weeks.'},
+  {id:211,name:'Exfoliating AHA Toner',cat:'Skincare',price:31.00,rating:4,reviews:89,badge:'',newest:false,emoji:'⚗️',desc:'Gentle AHA exfoliating toner with 5% glycolic acid and lactic acid blend. Smooths texture, fades dark spots, and brightens complexion with regular use.'},
+  {id:212,name:'Overnight Glow Mask',cat:'Skincare',price:44.00,rating:5,reviews:122,badge:'New',newest:true,emoji:'🌙',desc:'A rich sleeping mask formulated with bakuchiol, ceramides, and wild indigo extract. Wake up to visibly plumper, more radiant skin every morning. No rinse needed.'},
+  {id:213,name:'Micellar Water 300ml',cat:'Skincare',price:19.99,rating:4,reviews:203,badge:'',newest:false,emoji:'💦',desc:'Gentle micellar cleansing water that removes makeup, dirt, and impurities in one effortless swipe. No rinsing needed. Safe for sensitive skin and around the eyes.'},
+  {id:214,name:'Snail Mucin Essence',cat:'Skincare',price:39.00,rating:5,reviews:155,badge:'Bestseller',newest:false,emoji:'🐌',desc:'96% snail secretion filtrate essence that repairs, hydrates, and plumps skin. Promotes cell turnover and reduces the appearance of fine lines and acne scars.'},
+  {id:215,name:'Lip & Eye Serum',cat:'Skincare',price:27.00,rating:4,reviews:76,badge:'Sale',newest:false,emoji:'🌸',desc:'A dual-action serum targeting both the eye area and lip lines. Retinol, peptides, and hyaluronic acid work together to smooth, firm, and deeply hydrate.'},
+  {id:216,name:'Brightening Sheet Mask (5-pack)',cat:'Skincare',price:22.00,rating:5,reviews:244,badge:'Sale',newest:false,emoji:'🎭',desc:'Five essence-soaked brightening sheet masks infused with vitamin C, niacinamide, and kojic acid. Perfect for a weekly glow treatment or pre-event skin prep.'},
+  {id:217,name:'Body Glow Oil',cat:'Skincare',price:35.00,rating:5,reviews:118,badge:'New',newest:true,emoji:'🧴',desc:'A luxurious shimmer-infused dry body oil that nourishes, softens, and gives skin a radiant, golden glow. Absorbs quickly without leaving a greasy residue.'},
+  {id:218,name:'Turmeric Brightening Cream',cat:'Skincare',price:33.00,rating:4,reviews:92,badge:'',newest:false,emoji:'🌼',desc:'Turmeric and vitamin C enriched brightening cream that targets uneven skin tone, hyperpigmentation, and dullness. Gentle enough for daily use on all skin types.'},
+  {id:219,name:'Salicylic Acid Spot Treatment',cat:'Skincare',price:17.99,rating:4,reviews:131,badge:'',newest:false,emoji:'🎯',desc:'Fast-acting 2% salicylic acid spot treatment that reduces blemishes overnight. Targets clogged pores and excess sebum without over-drying surrounding skin.'},
+  {id:220,name:'Ceramide Barrier Serum',cat:'Skincare',price:46.00,rating:5,reviews:161,badge:'Bestseller',newest:false,emoji:'🛡️',desc:'A strengthening serum packed with ceramides 1, 3, and 6-II to restore the skin barrier. Ideal for sensitive, dry, or compromised skin prone to redness and irritation.'},
+  {id:221,name:'Face Mist with Green Tea',cat:'Skincare',price:21.00,rating:4,reviews:87,badge:'New',newest:true,emoji:'🍵',desc:'A refreshing face mist with green tea extract, aloe vera, and rosewater. Sets makeup, hydrates throughout the day, and provides a calming burst of antioxidants.'},
+
+  // ── HAIR (21 items) ──
+  {id:301,name:'Silk Argan Hair Mask',cat:'Hair',price:32.50,rating:5,reviews:194,badge:'Bestseller',newest:false,emoji:'🧴',desc:'Ultra-nourishing deep conditioning hair mask enriched with argan oil and silk proteins. Transforms dry, damaged hair into glossy, manageable locks in just one use.'},
+  {id:302,name:'Curl Defining Cream',cat:'Hair',price:27.00,rating:4,reviews:138,badge:'New',newest:true,emoji:'🌀',desc:'Specially formulated for natural curls and coils. Defines, moisturises, and reduces frizz without crunch or build-up. Infused with coconut milk and flaxseed oil.'},
+  {id:303,name:'Strengthening Shampoo',cat:'Hair',price:22.00,rating:5,reviews:256,badge:'Bestseller',newest:false,emoji:'🚿',desc:'Keratin and biotin enriched strengthening shampoo that cleanses without stripping natural oils. Reduces breakage, improves elasticity, and leaves hair noticeably thicker.'},
+  {id:304,name:'Nourishing Conditioner',cat:'Hair',price:22.00,rating:5,reviews:210,badge:'',newest:false,emoji:'💆',desc:'A rich, lightweight conditioner that detangles, moisturises, and adds brilliant shine. Formulated with shea butter and provitamin B5 for soft, manageable, healthy hair.'},
+  {id:305,name:'Heat Protectant Spray',cat:'Hair',price:19.99,rating:5,reviews:301,badge:'Bestseller',newest:false,emoji:'🔥',desc:'Thermal protectant spray that shields hair from heat damage up to 450°F. Lightweight mist that does not weigh hair down. Reduces frizz and adds brilliant shine.'},
+  {id:306,name:'Scalp Serum with Caffeine',cat:'Hair',price:38.00,rating:4,reviews:112,badge:'New',newest:true,emoji:'⚡',desc:'Targeted scalp serum with caffeine, niacinamide, and biotin to stimulate hair growth and reduce thinning. Apply directly to the scalp for maximum absorption.'},
+  {id:307,name:'Leave-In Conditioning Spray',cat:'Hair',price:18.00,rating:4,reviews:167,badge:'',newest:false,emoji:'🌿',desc:'A lightweight leave-in conditioning spray that detangles, moisturises, and primes hair for styling. Keeps hair hydrated throughout the day — ideal for all hair types.'},
+  {id:308,name:'Edge Control Gel',cat:'Hair',price:12.99,rating:5,reviews:245,badge:'Bestseller',newest:false,emoji:'✨',desc:'Strong-hold edge control gel that tames baby hairs and flyaways without flaking or crunchiness. Infused with castor oil for shine and nourishment. Lasts all day.'},
+  {id:309,name:'Protein Reconstruction Treatment',cat:'Hair',price:35.00,rating:5,reviews:88,badge:'New',newest:true,emoji:'💪',desc:'Intensive protein treatment for severely damaged or chemically-treated hair. Penetrates the cortex to rebuild broken bonds and restore strength and elasticity.'},
+  {id:310,name:'Coconut Oil Hair Serum',cat:'Hair',price:16.99,rating:4,reviews:183,badge:'Sale',newest:false,emoji:'🥥',desc:'Lightweight coconut-derived hair serum that adds incredible shine, eliminates frizz, and smooths the hair cuticle. A few drops are all you need for silky results.'},
+  {id:311,name:'Clarifying Shampoo',cat:'Hair',price:20.00,rating:4,reviews:99,badge:'',newest:false,emoji:'🫧',desc:'Monthly deep-cleanse shampoo that removes product build-up, hard water minerals, and impurities without stripping colour. Restores vibrancy and scalp clarity.'},
+  {id:312,name:'Hair Growth Oil Blend',cat:'Hair',price:29.00,rating:5,reviews:174,badge:'Bestseller',newest:false,emoji:'🌱',desc:'A potent blend of castor, jojoba, peppermint, and rosemary oils that promotes hair growth, reduces shedding, and nourishes the scalp. Visible results in 30 days.'},
+  {id:313,name:'Silk Bonnet (Adjustable)',cat:'Hair',price:24.00,rating:5,reviews:231,badge:'New',newest:true,emoji:'🎀',desc:'Double-layered satin silk bonnet that protects hair from breakage, frizz, and moisture loss while sleeping. Adjustable band fits all head sizes comfortably.'},
+  {id:314,name:'Wide-Tooth Detangling Comb',cat:'Hair',price:9.99,rating:4,reviews:144,badge:'',newest:false,emoji:'🪮',desc:'Seamless wide-tooth comb designed for gentle detangling on wet or dry hair. Flexible teeth prevent breakage and snap. Suitable for all curl types and textures.'},
+  {id:315,name:'Colour-Protect Conditioner',cat:'Hair',price:24.00,rating:5,reviews:107,badge:'',newest:false,emoji:'🎨',desc:'Colour-preserving conditioner enriched with UV filters and antioxidants. Extends colour vibrancy, reduces brassiness, and keeps colour-treated hair soft and shiny.'},
+  {id:316,name:'Biotin Hair Vitamins (60 caps)',cat:'Hair',price:26.00,rating:4,reviews:189,badge:'Sale',newest:false,emoji:'💊',desc:'60 daily hair growth gummies packed with biotin 5000mcg, folic acid, vitamin D3, and zinc. Supports thicker, stronger, faster-growing hair from the inside out.'},
+  {id:317,name:'Anti-Frizz Hair Butter',cat:'Hair',price:21.00,rating:4,reviews:128,badge:'New',newest:true,emoji:'🧈',desc:'Rich, whipped hair butter with mango butter, avocado oil, and aloe vera that seals in moisture and eliminates frizz. Perfect for natural, curly, and coily hair.'},
+  {id:318,name:'Hot Oil Treatment Sachets (4-pack)',cat:'Hair',price:16.00,rating:5,reviews:92,badge:'',newest:false,emoji:'🫗',desc:'Four single-use hot oil treatment sachets with a blend of olive, avocado, and sweet almond oils. Deeply penetrates and restores shine and softness to dry hair.'},
+  {id:319,name:'Braiding & Styling Gel',cat:'Hair',price:11.99,rating:4,reviews:162,badge:'Bestseller',newest:false,emoji:'✨',desc:'Extra hold braiding gel that delivers smooth, neat styles without flaking, residue, or frizz. Moisturising formula keeps hair hydrated during protective styles.'},
+  {id:320,name:'Satin Pillow Case',cat:'Hair',price:28.00,rating:5,reviews:215,badge:'New',newest:true,emoji:'🛏️',desc:'100% satin pillowcase that reduces hair breakage, frizz, and split ends while sleeping. Also benefits skin by reducing sleep creases and moisture loss overnight.'},
+  {id:321,name:'Rice Water Hair Rinse',cat:'Hair',price:18.99,rating:4,reviews:101,badge:'Sale',newest:false,emoji:'🍚',desc:'Fermented rice water hair rinse rich in amino acids and inositol that strengthens, lengthens, and adds shine to hair. Use weekly for visible growth results.'},
+
+  // ── NAILS (20 items) ──
+  {id:401,name:'Luxury Gel Nail Kit',cat:'Nails',price:44.99,rating:5,reviews:187,badge:'Bestseller',newest:false,emoji:'💅',desc:'Complete gel nail starter kit including LED lamp, base coat, top coat, nail file, cuticle pusher, and 8 gorgeous gel polish shades. Salon results at home.'},
+  {id:402,name:'Gel Polish Set — Nudes',cat:'Nails',price:32.00,rating:5,reviews:211,badge:'New',newest:true,emoji:'🤎',desc:'Six carefully curated nude gel polishes from sheer pink to deep caramel. Long-lasting chip-free formula that wears for up to 3 weeks under LED or UV lamp.'},
+  {id:403,name:'Nail Art Stamping Kit',cat:'Nails',price:22.00,rating:4,reviews:95,badge:'',newest:false,emoji:'🎨',desc:'Complete nail art stamping kit with 5 stamping plates, 2 nail stampers, and a scraper card. Create intricate floral, geometric, and abstract designs with ease.'},
+  {id:404,name:'Cuticle Oil Pen',cat:'Nails',price:11.99,rating:5,reviews:322,badge:'Bestseller',newest:false,emoji:'🖊️',desc:'Precision cuticle oil pen packed with jojoba, vitamin E, and sweet almond oil. Twist-and-click applicator makes moisturising cuticles on-the-go effortless.'},
+  {id:405,name:'Gel Strengthening Base Coat',cat:'Nails',price:14.99,rating:5,reviews:178,badge:'',newest:false,emoji:'🛡️',desc:'A fortifying gel base coat enriched with calcium and keratin. Prevents peeling and breakage while providing superior adhesion for gel polish. UV/LED curable.'},
+  {id:406,name:'Chrome Powder Set (6 colours)',cat:'Nails',price:18.00,rating:4,reviews:76,badge:'New',newest:true,emoji:'✨',desc:'Six ultra-fine chrome nail powders in gold, rose gold, silver, holographic, blue, and purple. Apply over gel for a seamless mirror-chrome or duochrome effect.'},
+  {id:407,name:'Press-On Nail Kit — Almond',cat:'Nails',price:16.99,rating:4,reviews:142,badge:'',newest:false,emoji:'💎',desc:'24 reusable almond-shaped press-on nails in glossy nude with a gold accent tip. Includes nail prep kit, adhesive tabs, and nail glue. Ready in under 5 minutes.'},
+  {id:408,name:'Matte Top Coat',cat:'Nails',price:12.99,rating:5,reviews:134,badge:'Bestseller',newest:false,emoji:'🖤',desc:'Transform any nail colour into a sophisticated matte finish with one coat. Quick-drying formula that sets in 60 seconds and is chip-resistant for up to 10 days.'},
+  {id:409,name:'Nail Buffer & Shine Block',cat:'Nails',price:8.99,rating:4,reviews:98,badge:'Sale',newest:false,emoji:'✦',desc:'4-step professional nail buffer that smooths ridges, removes stains, and creates a brilliant natural shine without polish. A must-have for healthy, polished nails.'},
+  {id:410,name:'French Tip Nail Stickers',cat:'Nails',price:9.99,rating:4,reviews:87,badge:'',newest:false,emoji:'🌿',desc:'Self-adhesive French tip nail guide stickers in 5 widths. Creates a perfect, even French tip every time. Works with regular polish, gel, or acrylic systems.'},
+  {id:411,name:'Nail Prep & Dehydrator Kit',cat:'Nails',price:17.99,rating:5,reviews:121,badge:'',newest:false,emoji:'⚗️',desc:'Professional nail prep kit with pH balancer, nail dehydrator, and primer to ensure maximum gel and acrylic adhesion. Eliminates oils and moisture from the nail plate.'},
+  {id:412,name:'Ombre Nail Sponges (10 pcs)',cat:'Nails',price:7.99,rating:4,reviews:66,badge:'Sale',newest:false,emoji:'🌈',desc:'10 soft sponge applicators specially designed for creating seamless ombre and gradient nail effects with regular or gel polish. Reusable and easy to clean.'},
+  {id:413,name:'Hard Gel Builder (Clear)',cat:'Nails',price:24.00,rating:5,reviews:103,badge:'New',newest:true,emoji:'💪',desc:'Professional-grade hard builder gel for creating strong nail extensions and overlays. Viscous, self-levelling formula that cures under UV/LED for a crystal-clear finish.'},
+  {id:414,name:'Glitter Gel Polish Set',cat:'Nails',price:28.00,rating:4,reviews:119,badge:'New',newest:true,emoji:'🌟',desc:'Six shimmering glitter gel polishes in champagne, rose gold, holographic silver, midnight blue, emerald, and red. Full coverage or as a glitter top coat.'},
+  {id:415,name:'Cuticle Remover Cream',cat:'Nails',price:10.99,rating:4,reviews:88,badge:'',newest:false,emoji:'🌿',desc:'Fast-acting cuticle remover cream that softens and dissolves excess cuticle tissue in 60 seconds. Leaves the nail base clean and smooth for a professional finish.'},
+  {id:416,name:'Nail Strengthener Treatment',cat:'Nails',price:15.99,rating:5,reviews:167,badge:'Bestseller',newest:false,emoji:'💎',desc:'A bonding nail treatment that repairs thin, brittle, and peeling nails. Formaldehyde-free formula with calcium and protein. Visible strengthening in just 7 days.'},
+  {id:417,name:'Builder Gel Polygel Kit',cat:'Nails',price:38.00,rating:5,reviews:94,badge:'New',newest:true,emoji:'🔧',desc:'Polygel nail extension kit with dual forms, slip solution, nail tips, and 6 shades of polygel. Lighter and easier to work with than acrylic — salon results at home.'},
+  {id:418,name:'Electric Nail Drill Set',cat:'Nails',price:42.00,rating:5,reviews:143,badge:'Bestseller',newest:false,emoji:'⚡',desc:'Professional 30,000 RPM rechargeable nail drill with 6 interchangeable drill bits. Portable and quiet. Ideal for gel removal, shaping, and nail prep.'},
+  {id:419,name:'Gel Colour Set — Jewel Tones',cat:'Nails',price:34.00,rating:4,reviews:107,badge:'',newest:false,emoji:'💜',desc:'Six deep jewel-toned gel polishes in ruby red, sapphire, amethyst, emerald, topaz, and onyx. Rich, highly pigmented formula that covers in one coat.'},
+  {id:420,name:'Nail Foil Transfer Kit',cat:'Nails',price:13.99,rating:4,reviews:72,badge:'Sale',newest:false,emoji:'🏆',desc:'Nail foil transfer kit with 10 rolls of metallic foil in gold, silver, rose gold, holographic, and marble patterns. Creates luxurious foil nail art with ease.'},
+
+  // ── CLOTHING (22 items) ──
+  {id:501,name:'Floral Chiffon Midi Dress',cat:'Clothing',price:68.00,rating:5,reviews:144,badge:'New',newest:true,emoji:'👗',desc:'An effortlessly elegant floral midi dress crafted from lightweight chiffon. Features a flattering A-line silhouette, wrap-style bodice, and delicate floral print.'},
+  {id:502,name:'Satin Slip Dress',cat:'Clothing',price:78.00,rating:5,reviews:189,badge:'Bestseller',newest:false,emoji:'✨',desc:'A luxurious satin slip dress with adjustable spaghetti straps and a bias-cut silhouette. Wear alone for evening glam or layered over a fitted turtleneck.'},
+  {id:503,name:'Ribbed Body-Con Set',cat:'Clothing',price:52.00,rating:4,reviews:122,badge:'New',newest:true,emoji:'🌹',desc:'A coordinated ribbed bodycon two-piece set featuring a sleeveless crop top and figure-hugging midi skirt. Available in nude, black, chocolate, and rust.'},
+  {id:504,name:'Oversized Blazer',cat:'Clothing',price:85.00,rating:5,reviews:97,badge:'',newest:false,emoji:'🧥',desc:'An elevated power blazer in a relaxed, oversized silhouette. Structured shoulders, double-breasted buttons, and a long hemline. Office-to-evening versatility.'},
+  {id:505,name:'Wide-Leg Trousers',cat:'Clothing',price:59.00,rating:5,reviews:111,badge:'Bestseller',newest:false,emoji:'👖',desc:'Flowing wide-leg trousers in a crepe fabric with a high rise and elasticated back waistband. Pairs perfectly with a fitted crop or tucked-in blouse for a chic silhouette.'},
+  {id:506,name:'Wrap Midi Skirt',cat:'Clothing',price:48.00,rating:4,reviews:88,badge:'New',newest:true,emoji:'💃',desc:'A versatile wrap midi skirt with a self-tie waist that flatters every figure. Lightweight woven fabric with a slit hem. Suitable for casual and formal occasions.'},
+  {id:507,name:'Off-Shoulder Ruffle Blouse',cat:'Clothing',price:44.00,rating:4,reviews:76,badge:'',newest:false,emoji:'🌸',desc:'A feminine off-shoulder blouse with tiered ruffle detailing and elasticated neckline. Slightly cropped silhouette that pairs beautifully with high-waisted bottoms.'},
+  {id:508,name:'Faux Leather Mini Skirt',cat:'Clothing',price:46.00,rating:5,reviews:133,badge:'Bestseller',newest:false,emoji:'🖤',desc:'A sleek, body-skimming faux leather mini skirt with a back zip fastening and a barely-there slit. Edgy yet sophisticated — a wardrobe staple for every queen.'},
+  {id:509,name:'Linen Co-ord Set',cat:'Clothing',price:72.00,rating:5,reviews:102,badge:'New',newest:true,emoji:'🌿',desc:'A relaxed linen co-ord set featuring a short-sleeve button-up shirt and matching wide-leg trousers. Perfect for warm weather and resort dressing.'},
+  {id:510,name:'Velvet Crop Top',cat:'Clothing',price:32.00,rating:4,reviews:91,badge:'Sale',newest:false,emoji:'💜',desc:'A luxuriously soft velvet crop top with a sweetheart neckline and thick straps. The stretch velvet hugs the body for a glamorous, form-fitting look.'},
+  {id:511,name:'Bodysuit with Gold Detail',cat:'Clothing',price:38.00,rating:5,reviews:118,badge:'New',newest:true,emoji:'⚡',desc:'A sleek, figure-sculpting bodysuit with gold ring and zipper hardware. Snap-button gusset for convenience. Wear tucked into skirts or trousers for a polished look.'},
+  {id:512,name:'Maxi Wrap Dress',cat:'Clothing',price:82.00,rating:5,reviews:155,badge:'Bestseller',newest:false,emoji:'🌺',desc:'A floor-length wrap dress in flowing crepe fabric. Adjustable self-tie waist, deep V-neckline, and elegant flutter sleeves. Available in solid and printed options.'},
+  {id:513,name:'Knit Crop Cardigan',cat:'Clothing',price:54.00,rating:4,reviews:87,badge:'',newest:false,emoji:'🧶',desc:'A soft, chunky-knit cropped cardigan with an open front and oversized fit. Cosy yet stylish — pairs beautifully with high-waisted jeans or a flowy midi skirt.'},
+  {id:514,name:'Puff Sleeve Blouse',cat:'Clothing',price:41.00,rating:4,reviews:74,badge:'New',newest:true,emoji:'🌷',desc:'A romantic puff-sleeve blouse with a gathered neckline and loose, flowing body. Made from a breathable cotton-blend fabric. Easy to style for day or night.'},
+  {id:515,name:'Tailored Shorts',cat:'Clothing',price:38.00,rating:4,reviews:66,badge:'',newest:false,emoji:'✂️',desc:'High-waisted tailored shorts with front pockets and zip fastening. The structured fit and pleated front create a chic, polished look for summer dressing.'},
+  {id:516,name:'Sheer Printed Blouse',cat:'Clothing',price:39.00,rating:4,reviews:80,badge:'Sale',newest:false,emoji:'🎨',desc:'A delicate sheer blouse with an abstract print, long sleeves, and button-through front. Layer over a camisole or bralette for an effortlessly elegant look.'},
+  {id:517,name:'High-Neck Bodycon Dress',cat:'Clothing',price:62.00,rating:5,reviews:128,badge:'Bestseller',newest:false,emoji:'🖤',desc:'A sleek high-neck bodycon mini dress in a thick, sculpting ribbed fabric. Simple, sophisticated, and incredibly flattering. Available in 8 colours.'},
+  {id:518,name:'Pleated Palazzo Pants',cat:'Clothing',price:55.00,rating:5,reviews:93,badge:'New',newest:true,emoji:'🌊',desc:'Dramatic wide-leg palazzo pants with front pleats and a high, elasticated waistband. Lightweight flowing fabric that moves beautifully. Elegant and comfortable.'},
+  {id:519,name:'Denim Mini Skirt',cat:'Clothing',price:44.00,rating:4,reviews:115,badge:'',newest:false,emoji:'👖',desc:'A classic A-line denim mini skirt with a button-front closure and raw hem. The timeless wardrobe staple that pairs with absolutely everything in your closet.'},
+  {id:520,name:'Sequin Party Top',cat:'Clothing',price:49.00,rating:5,reviews:101,badge:'New',newest:true,emoji:'🎉',desc:'A dazzling sequin-embellished party top with a relaxed fit and V-neckline. Wear solo or layered under a blazer for maximum glamour. Fully lined for comfort.'},
+  {id:521,name:'Ruched Mini Dress',cat:'Clothing',price:57.00,rating:5,reviews:142,badge:'Bestseller',newest:false,emoji:'💋',desc:'A figure-flattering ruched mini dress that accentuates every curve. Strappy design, stretchy fabric, and adjustable ties make this universally wearable.'},
+  {id:522,name:'Trench Coat (Belt)',cat:'Clothing',price:112.00,rating:5,reviews:86,badge:'New',newest:true,emoji:'🧥',desc:'A classic double-breasted trench coat in water-resistant cotton-blend fabric. Comes with a detachable belt, storm flap, and gun flap. Timeless investment piece.'},
+
+  // ── SHOES (20 items) ──
+  {id:601,name:'Strappy Kitten Heel Sandals',cat:'Shoes',price:72.00,rating:5,reviews:118,badge:'New',newest:true,emoji:'👠',desc:'Elegant strappy sandals with a delicate kitten heel and adjustable ankle strap. Faux suede finish in classic nude — the perfect finishing touch to any outfit.'},
+  {id:602,name:'Block Heel Mules',cat:'Shoes',price:58.00,rating:4,reviews:144,badge:'Bestseller',newest:false,emoji:'🥿',desc:'Chic block heel mules in soft faux leather. The wide, stable block heel provides all-day comfort without sacrificing style. A true wardrobe essential.'},
+  {id:603,name:'Platform Sneakers',cat:'Shoes',price:65.00,rating:5,reviews:201,badge:'Bestseller',newest:false,emoji:'👟',desc:'Elevated platform sneakers with a chunky 3-inch sole and lace-up closure. The retro-inspired design adds height and edge to any casual or streetwear outfit.'},
+  {id:604,name:'Pointed-Toe Stilettos',cat:'Shoes',price:88.00,rating:5,reviews:97,badge:'New',newest:true,emoji:'👡',desc:'Classic pointed-toe stiletto heels in patent faux leather. A 4-inch stiletto heel elongates the leg beautifully. The ultimate power shoe for any formal occasion.'},
+  {id:605,name:'Ankle Strap Heels',cat:'Shoes',price:74.00,rating:4,reviews:112,badge:'',newest:false,emoji:'💃',desc:'Feminine block-heel sandals with a wide ankle strap and open-toe design. The comfortable 3-inch heel makes these ideal for all-day events or evening occasions.'},
+  {id:606,name:'Clear Heeled Sandals',cat:'Shoes',price:56.00,rating:4,reviews:88,badge:'Sale',newest:false,emoji:'💎',desc:'Trendy clear PVC strappy sandals with a perspex block heel. The barely-there design gives the illusion of a floating foot and pairs with absolutely everything.'},
+  {id:607,name:'Slip-On Loafers',cat:'Shoes',price:62.00,rating:5,reviews:165,badge:'Bestseller',newest:false,emoji:'🥾',desc:'Polished loafers in a smooth faux leather with gold-hardware horse-bit detail. Comfortable, versatile, and effortlessly smart. From office to weekend dressing.'},
+  {id:608,name:'Knee-High Heeled Boots',cat:'Shoes',price:98.00,rating:5,reviews:134,badge:'New',newest:true,emoji:'🥿',desc:'Sophisticated knee-high boots with a 3-inch block heel and inside zip fastening. Sleek faux leather upper with a round toe. A bold autumn and winter staple.'},
+  {id:609,name:'Woven Flatform Sandals',cat:'Shoes',price:49.00,rating:4,reviews:99,badge:'',newest:false,emoji:'🌸',desc:'Boho-inspired woven flatform sandals with a 2-inch flatform sole and adjustable buckle ankle strap. Lightweight and comfortable for all-day summer wear.'},
+  {id:610,name:'Square-Toe Mules',cat:'Shoes',price:53.00,rating:5,reviews:121,badge:'New',newest:true,emoji:'✨',desc:'Contemporary square-toe mules with a low block heel and slip-on design. The minimalist silhouette pairs perfectly with tailored trousers or a flowing midi dress.'},
+  {id:611,name:'Strappy Flat Sandals',cat:'Shoes',price:39.00,rating:4,reviews:178,badge:'Sale',newest:false,emoji:'🌺',desc:'Multi-strap flat sandals in soft faux leather with adjustable buckle closures. Lightweight and flexible sole makes these ideal for extended walking and travel.'},
+  {id:612,name:'Heeled Chelsea Boots',cat:'Shoes',price:82.00,rating:5,reviews:109,badge:'Bestseller',newest:false,emoji:'🖤',desc:'Sleek Chelsea boots with an elasticated panel and 3-inch block heel. The clean, minimalist design transitions effortlessly from casual daywear to evening outfits.'},
+  {id:613,name:'Two-Tone Pumps',cat:'Shoes',price:69.00,rating:4,reviews:76,badge:'',newest:false,emoji:'🤍',desc:'Elegant two-tone pointed pumps with a contrast cap toe and stiletto heel. A timeless design inspired by classic Parisian fashion. Versatile and utterly chic.'},
+  {id:614,name:'Flatform Espadrilles',cat:'Shoes',price:44.00,rating:4,reviews:88,badge:'New',newest:true,emoji:'🌿',desc:'Jute-wrapped flatform espadrilles with canvas uppers, lace-up ankle ties, and a 2-inch woven platform. The ultimate summer holiday shoe — cool, stylish, and comfy.'},
+  {id:615,name:'Strappy Heeled Mules',cat:'Shoes',price:67.00,rating:5,reviews:131,badge:'',newest:false,emoji:'👠',desc:'Barely-there strappy heeled mules with thin crossed straps and a 4-inch stiletto. The transparent PVC straps make these a perfect match for any outfit colour.'},
+  {id:616,name:'Slingback Court Shoes',cat:'Shoes',price:71.00,rating:5,reviews:95,badge:'New',newest:true,emoji:'💼',desc:'Classic slingback court shoes with a pointed toe and low kitten heel. The elasticated slingback strap provides a secure fit. Available in black, nude, and red.'},
+  {id:617,name:'High Platform Sandals',cat:'Shoes',price:79.00,rating:4,reviews:87,badge:'Sale',newest:false,emoji:'⬆️',desc:'Dramatic high-platform sandals with a 2-inch platform and 5-inch block heel. Chunky ankle strap with a buckle closure. Bold, confidence-boosting statement shoes.'},
+  {id:618,name:'Bow Detail Ballet Flats',cat:'Shoes',price:42.00,rating:5,reviews:145,badge:'Bestseller',newest:false,emoji:'🎀',desc:'Sweet and sophisticated ballet flats adorned with a satin ribbon bow at the toe. Soft faux leather upper and cushioned insole for all-day comfort and elegance.'},
+  {id:619,name:'Open-Toe Ankle Boots',cat:'Shoes',price:76.00,rating:4,reviews:102,badge:'New',newest:true,emoji:'🌟',desc:'Edgy open-toe ankle boots with a zip fastening and 3-inch block heel. The peep-toe design adds a playful twist to the classic ankle boot. A true style statement.'},
+  {id:620,name:'Studded Sandal Heels',cat:'Shoes',price:83.00,rating:5,reviews:78,badge:'',newest:false,emoji:'🔩',desc:'Bold heeled sandals with gold-studded strap detailing and a 4-inch stiletto. The rock-meets-glam design elevates any look from polished to powerfully edgy.'},
+];
+
+// ════════════════════════════════
+// STATE
+// ════════════════════════════════
+let cart=[], curProd=null, dqty=1, discount=0;
+let filters={cats:[],maxPrice:200};
+let curPage=1; const PER_PAGE=12;
+
+// ════════════════════════════════
+// NAVIGATION
+// ════════════════════════════════
+function goPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('pg-'+n).classList.add('active');
+  window.scrollTo(0,0);
+  if(n==='shop') renderShop();
+  if(n==='cart') renderCart();
+  if(n==='home') initRv();
+}
+function catGo(c){
+  filters.cats=[c];
+  curPage=1;
+  document.querySelectorAll('#catFilters input').forEach(cb=>{cb.checked=cb.value===c;});
+  goPage('shop');
+}
+function toReviews(){setTimeout(()=>document.getElementById('rev-anchor')?.scrollIntoView({behavior:'smooth'}),100);}
+
+// ════════════════════════════════
+// HELPERS
+// ════════════════════════════════
+function catClass(c){return'c-'+c.toLowerCase();}
+function starStr(r){return'★'.repeat(r)+'☆'.repeat(5-r);}
+
+// ════════════════════════════════
+// SHOP FILTERS
+// ════════════════════════════════
+function buildCatFilters(){
+  const cats=[...new Set(products.map(p=>p.cat))].sort();
+  document.getElementById('catFilters').innerHTML=cats.map(c=>{
+    const n=products.filter(p=>p.cat===c).length;
+    return`<li class="fitem"><input type="checkbox" id="cf-${c}" value="${c}" onchange="onCatCb()"><label for="cf-${c}">${c}</label><span class="fc">(${n})</span></li>`;
+  }).join('');
+}
+function onCatCb(){filters.cats=[...document.querySelectorAll('#catFilters input:checked')].map(cb=>cb.value);curPage=1;renderShop();}
+function onPrice(v){filters.maxPrice=parseInt(v);document.getElementById('pDisp').textContent=`Up to $${parseFloat(v).toFixed(2)}`;curPage=1;renderShop();}
+function clearF(){
+  filters={cats:[],maxPrice:200};curPage=1;
+  document.getElementById('priceSlider').value=200;
+  document.getElementById('pDisp').textContent='Up to $200.00';
+  document.querySelectorAll('#catFilters input,#r5,#r4,#fNew,#fSale,#fBest').forEach(cb=>cb.checked=false);
+  renderShop();
+}
+function getFiltered(){
+  let list=[...products];
+  if(filters.cats.length) list=list.filter(p=>filters.cats.includes(p.cat));
+  list=list.filter(p=>p.price<=filters.maxPrice);
+  if(document.getElementById('r5')?.checked) list=list.filter(p=>p.rating===5);
+  else if(document.getElementById('r4')?.checked) list=list.filter(p=>p.rating>=4);
+  if(document.getElementById('fNew')?.checked) list=list.filter(p=>p.badge==='New');
+  if(document.getElementById('fSale')?.checked) list=list.filter(p=>p.badge==='Sale');
+  if(document.getElementById('fBest')?.checked) list=list.filter(p=>p.badge==='Bestseller');
+  const s=document.getElementById('sortSel')?.value||'default';
+  if(s==='price-asc') list.sort((a,b)=>a.price-b.price);
+  else if(s==='price-desc') list.sort((a,b)=>b.price-a.price);
+  else if(s==='rating') list.sort((a,b)=>b.rating-a.rating||b.reviews-a.reviews);
+  else if(s==='newest') list.sort((a,b)=>b.newest-a.newest);
+  return list;
+}
+
+function renderShop(){
+  const all=getFiltered();
+  const totalPages=Math.ceil(all.length/PER_PAGE);
+  if(curPage>totalPages) curPage=Math.max(1,totalPages);
+  const list=all.slice((curPage-1)*PER_PAGE,curPage*PER_PAGE);
+  const g=document.getElementById('shopGrid');
+  document.getElementById('rcount').innerHTML=`<strong>${all.length}</strong> product${all.length!==1?'s':''} found`;
+  if(!all.length){g.innerHTML='';document.getElementById('noRes').style.display='block';document.getElementById('pgBar').innerHTML='';return;}
+  document.getElementById('noRes').style.display='none';
+  g.innerHTML=list.map(p=>cardHTML(p)).join('');
+  renderPagination(totalPages);
+}
+
+function renderPagination(total){
+  const bar=document.getElementById('pgBar');
+  if(total<=1){bar.innerHTML='';return;}
+  let h=`<button class="pg-btn arrow" onclick="changePage(${curPage-1})" ${curPage===1?'disabled':''}>‹</button>`;
+  for(let i=1;i<=total;i++){
+    if(i===1||i===total||Math.abs(i-curPage)<=1){
+      h+=`<button class="pg-btn${i===curPage?' active':''}" onclick="changePage(${i})">${i}</button>`;
+    } else if(Math.abs(i-curPage)===2){
+      h+=`<button class="pg-btn" style="pointer-events:none;opacity:0.4">…</button>`;
+    }
+  }
+  h+=`<button class="pg-btn arrow" onclick="changePage(${curPage+1})" ${curPage===total?'disabled':''}>›</button>`;
+  bar.innerHTML=h;
+}
+function changePage(n){curPage=n;renderShop();window.scrollTo(0,300);}
+
+// ════════════════════════════════
+// CARD HTML
+// ════════════════════════════════
+function cardHTML(p,dark){
+  const d=dark;
+  const badge=p.badge?`<div class="pbadge${p.badge==='Sale'?' sale':p.badge==='New'?' new':''}">${p.badge}</div>`:'';
+  return`<div class="pcard"${d?' style="background:#1a1a1a;border-color:rgba(201,168,76,0.1)"':''}>
+    ${badge}
+    <div class="pimg ${catClass(p.cat)}"${d?' style="background:linear-gradient(135deg,#2a2a2a,#1a1616)"':''}>
+      <span class="pimg-emoji">${p.emoji}</span>
+      <div class="poverlay">
+        <button class="oadd" onclick="addToCart(${p.id});event.stopPropagation()">Add to Cart</button>
+        <button class="oview" onclick="openDetail(${p.id});event.stopPropagation()">View Details</button>
+      </div>
+    </div>
+    <div class="pinfo" onclick="openDetail(${p.id})" style="cursor:pointer">
+      <div class="pname"${d?' style="color:#fff"':''}>${p.name}</div>
+      <div class="pcat"${d?' style="color:rgba(255,255,255,0.35)"':''}>${p.cat}</div>
+      <div class="pfoot">
+        <div class="pprice"${d?' style="color:var(--gold-light)"':''}>$${p.price.toFixed(2)}</div>
+        <div class="pstars">${starStr(p.rating)} <span style="font-size:0.58rem;color:${d?'rgba(255,255,255,0.3)':'rgba(42,42,42,0.4)'}">(${p.reviews})</span></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════
+// PRODUCT DETAIL
+// ════════════════════════════════
+function openDetail(id){
+  const p=products.find(x=>x.id===id); if(!p) return;
+  curProd=p; dqty=1;
+  document.getElementById('qnum').textContent=1;
+  document.getElementById('dcrumb').textContent=p.name;
+  document.getElementById('dcat').textContent=p.cat;
+  document.getElementById('dname').textContent=p.name;
+  document.getElementById('dstars').innerHTML=starStr(p.rating)+` <span>(${p.reviews} reviews)</span>`;
+  document.getElementById('dprice').textContent=`$${p.price.toFixed(2)}`;
+  document.getElementById('ddesc').textContent=p.desc;
+  document.getElementById('demoji').textContent=p.emoji;
+  const di=document.getElementById('dimg');
+  di.className=`dimg ${catClass(p.cat)}`;
+  const b=document.getElementById('dbadge');
+  if(p.badge){b.textContent=p.badge;b.className='dbadge'+(p.badge==='Sale'?' sale':'');b.style.display='block';}
+  else b.style.display='none';
+  // related
+  const rel=products.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,4);
+  document.getElementById('relGrid').innerHTML=rel.map(x=>cardHTML(x)).join('');
+  goPage('detail');
+}
+function dq(d){dqty=Math.max(1,dqty+d);document.getElementById('qnum').textContent=dqty;}
+function addCurrent(){
+  if(!curProd) return;
+  for(let i=0;i<dqty;i++) addToCart(curProd.id,false);
+  showToast(`${dqty}× ${curProd.name} added ✦`);
+  updateCount();
+}
+
+// ════════════════════════════════
+// CART
+// ════════════════════════════════
+function addToCart(id,toast=true){
+  const p=products.find(x=>x.id===id); if(!p) return;
+  const ex=cart.find(c=>c.id===id);
+  if(ex) ex.qty++; else cart.push({...p,qty:1});
+  updateCount();
+  if(toast) showToast(`${p.name} added ✦`);
+}
+function updateCount(){document.getElementById('cartCount').textContent=cart.reduce((s,c)=>s+c.qty,0);}
+function renderCart(){
+  const l=document.getElementById('cartList'),e=document.getElementById('emptyCart');
+  if(!cart.length){l.innerHTML='';e.style.display='block';updateSummary();return;}
+  e.style.display='none';
+  l.innerHTML=cart.map(it=>`
+    <div class="ci">
+      <div class="ci-img ${catClass(it.cat)}">${it.emoji}</div>
+      <div>
+        <div class="ci-name">${it.name}</div>
+        <div class="ci-cat">${it.cat}</div>
+        <div class="ci-price">$${it.price.toFixed(2)} each</div>
+        <div class="qctrl" style="margin-top:0.8rem;display:inline-flex">
+          <button class="qbtn" onclick="cqty(${it.id},-1)">−</button>
+          <span class="qnum">${it.qty}</span>
+          <button class="qbtn" onclick="cqty(${it.id},1)">+</button>
+        </div>
+      </div>
+      <div class="ci-right">
+        <div class="ci-total">$${(it.price*it.qty).toFixed(2)}</div>
+        <button class="rm-btn" onclick="rmCart(${it.id})">Remove</button>
+      </div>
+    </div>`).join('');
+  updateSummary();
+}
+function cqty(id,d){const it=cart.find(c=>c.id===id);if(!it) return;it.qty=Math.max(0,it.qty+d);if(it.qty===0) cart=cart.filter(c=>c.id!==id);updateCount();renderCart();}
+function rmCart(id){cart=cart.filter(c=>c.id!==id);updateCount();renderCart();}
+function updateSummary(){
+  const sub=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  const ship=sub===0?0:sub>=50?0:5.99;
+  const total=Math.max(0,sub+ship-discount);
+  document.getElementById('oSub').textContent=`$${sub.toFixed(2)}`;
+  document.getElementById('oShip').textContent=sub===0?'—':ship===0?'Free ✦':`$${ship.toFixed(2)}`;
+  document.getElementById('oDisc').textContent=discount>0?`-$${discount.toFixed(2)}`:'—';
+  document.getElementById('oTotal').textContent=`$${total.toFixed(2)}`;
+}
+function applyPromo(){
+  const c=document.getElementById('promoIn').value.toUpperCase().trim();
+  if(c==='IMANI10'){discount=cart.reduce((s,c)=>s+c.price*c.qty,0)*0.1;showToast('10% off applied! ✦');updateSummary();}
+  else if(c==='QUEEN'){discount=5;showToast('$5 discount applied! ✦');updateSummary();}
+  else showToast('Invalid promo code');
+}
+function checkout(){
+  if(!cart.length) return;
+  showToast('Processing order… ✦');
+  setTimeout(()=>{cart=[];discount=0;updateCount();showToast('Order placed! Thank you, Queen ♡');renderCart();},2000);
+}
+
+// ════════════════════════════════
+// HOME GRID
+// ════════════════════════════════
+function renderHome(){
+  const picks=products.filter(p=>p.badge==='Bestseller').slice(0,4);
+  document.getElementById('homeGrid').innerHTML=picks.map(p=>cardHTML(p,true)).join('');
+}
+
+// ════════════════════════════════
+// NEWSLETTER
+// ════════════════════════════════
+function doNl(){
+  const i=document.getElementById('nlIn');
+  if(i.value.includes('@')){i.value='Thank you! ✦';i.style.color='var(--gold)';showToast('You\'re in the Inner Circle! ♡');}
+  else showToast('Please enter a valid email');
+}
+
+// ════════════════════════════════
+// TOAST
+// ════════════════════════════════
+let tt;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show');
+  clearTimeout(tt);
+  tt=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ════════════════════════════════
+// SCROLL REVEAL
+// ════════════════════════════════
+function initRv(){
+  const obs=new IntersectionObserver(en=>en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+}
+
+
+// ════════════════════════════════
+// WHATSAPP
+// ════════════════════════════════
+// ⚠️  Replace with your actual WhatsApp number (include country code, no + or spaces)
+const WA_NUMBER = '+2348132545658';
+
+function openWaModal(){
+  populateWaPreview();
+  document.getElementById('waModalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeWaModal(){
+  document.getElementById('waModalBg').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleWaBgClick(e){
+  if(e.target===document.getElementById('waModalBg')) closeWaModal();
+}
+function populateWaPreview(){
+  const list=document.getElementById('waItemsList');
+  const totalRow=document.getElementById('waTotalRow');
+  if(!cart.length){
+    list.innerHTML='<p style="font-size:0.78rem;color:rgba(42,42,42,0.4)">No items in cart yet. Add products first!</p>';
+    totalRow.style.display='none';
+    return;
+  }
+  list.innerHTML=cart.map(it=>`
+    <div class="wa-item-row">
+      <span>${it.emoji} ${it.name} × ${it.qty}</span>
+      <span>$${(it.price*it.qty).toFixed(2)}</span>
+    </div>`).join('');
+  const sub=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  const ship=sub>=50?0:5.99;
+  const total=Math.max(0,sub+ship-discount);
+  document.getElementById('waTotal').textContent=`$${total.toFixed(2)}`;
+  totalRow.style.display='flex';
+}
+function sendWhatsApp(){
+  const name=document.getElementById('waName').value.trim();
+  const phone=document.getElementById('waPhone').value.trim();
+  const address=document.getElementById('waAddress').value.trim();
+  const notes=document.getElementById('waNotes').value.trim();
+
+  if(!name){showToast('Please enter your name');return;}
+  if(!phone){showToast('Please enter your phone number');return;}
+  if(!address){showToast('Please enter your delivery address');return;}
+  if(!cart.length){showToast('Your cart is empty — add some products first!');return;}
+
+  const sub=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  const ship=sub>=50?0:5.99;
+  const total=Math.max(0,sub+ship-discount);
+
+  let msg = `✨ *NEW ORDER — Imani's Beauty* ✨\n\n`;
+  msg += `👤 *Customer:* ${name}\n`;
+  msg += `📞 *Phone:* ${phone}\n`;
+  msg += `📍 *Address:* ${address}\n`;
+  if(notes) msg += `📝 *Notes:* ${notes}\n`;
+  msg += `\n🛍️ *ORDER ITEMS:*\n`;
+  cart.forEach(it=>{
+    msg += `• ${it.emoji} ${it.name} × ${it.qty} = $${(it.price*it.qty).toFixed(2)}\n`;
+  });
+  msg += `\n💰 *Subtotal:* $${sub.toFixed(2)}\n`;
+  msg += `🚚 *Shipping:* ${ship===0?'Free':'$'+ship.toFixed(2)}\n`;
+  if(discount>0) msg += `🎉 *Discount:* -$${discount.toFixed(2)}\n`;
+  msg += `💛 *TOTAL: $${total.toFixed(2)}*\n\n`;
+  msg += `Please confirm my order. Thank you! 🙏`;
+
+  const url=`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(url,'_blank');
+  closeWaModal();
+  showToast('Opening WhatsApp… 💛');
+}
+
+// ════════════════════════════════
+// INIT
+// ════════════════════════════════
+buildCatFilters();
+renderHome();
+initRv();
+</script>
+</body>
+</html>
