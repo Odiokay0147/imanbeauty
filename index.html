@@ -409,8 +409,43 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .hero-sub{font-size:0.8rem;max-width:100%;}
   .hero-btns{flex-direction:column;gap:0.8rem;margin-top:2rem;}
   .btn-primary,.btn-ghost{text-align:center;padding:0.9rem 1.5rem;font-size:0.62rem;}
-  .hero-right{min-height:55vw;}
-  .hero-inner{padding:2.5rem 1.5rem 0;}
+  .hero-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    background: var(--blush); /* Fallback color */
+    }
+  .hero-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1; /* Sits above the image */
+    padding: 5rem 3rem 0;
+    /* This semi-transparent background helps text legibility if the image is busy */
+    background: linear-gradient(to bottom, transparent 40%, rgba(250,245,239,0.4));
+    }
+  .hero-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace 'your-image-path.jpg' with the actual filename of your design */
+    background-image: url('imagery.jpg'); 
+    background-size: cover;
+    background-position: center right;
+    z-index: 0;
+    /* Optional: subtle overlay to make the "IMANI" text pop */
+    filter: brightness(0.95);
+    }
   .hero-brand-display{font-size:clamp(2rem,10vw,3rem);letter-spacing:0.2em;}
   .hero-brand-sub{font-size:0.58rem;letter-spacing:0.25em;gap:0.6rem;}
   .hero-stats{margin-top:1.5rem;}
@@ -693,21 +728,31 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-inner">
-        <svg class="crown-svg" viewBox="0 0 60 42" fill="none">
-          <path d="M5 38L10 15L22 28L30 8L38 28L50 15L55 38H5Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="5" cy="14" r="3" fill="#C9A84C"/><circle cx="30" cy="5" r="3" fill="#C9A84C"/><circle cx="55" cy="14" r="3" fill="#C9A84C"/>
-          <line x1="5" y1="40" x2="55" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
-        </svg>
-        <div class="hero-brand-display">IMANI'S</div>
-        <div class="hero-brand-sub">Beauty <b></b> Fashion <b></b> Confidence</div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Products</span></div>
-          <div class="stat"><span class="stat-num">10K+</span><span class="stat-label">Clients</span></div>
-          <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+    <div class="hero-image-bg"></div>
+    
+    <div class="hero-inner">
+        <img src="crown-icon.svg" class="crown-svg" alt="Icon">
+        <h2 class="hero-brand-display">IMANI</h2>
+        <div class="hero-brand-sub">
+            EST. 2024 <b></b> LUXURY <b></b> BEAUTY
         </div>
-      </div>
+        
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">15k+</span>
+                <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">4.9</span>
+                <span class="stat-label">Rating</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">24h</span>
+                <span class="stat-label">Support</span>
+            </div>
+        </div>
     </div>
+</div>
   </section>
 
   <div class="marquee-bar"><div class="marquee-track">
