@@ -378,7 +378,7 @@ function closeMobMenu(){
 // WHATSAPP
 // ════════════════════════════════
 // ⚠️  Replace with your actual WhatsApp number (include country code, no + or spaces)
-const WA_NUMBER = '18777374672';
+const WA_NUMBER = '16467839583';
 
 function openWaModal(){
   populateWaPreview();
