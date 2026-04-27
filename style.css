@@ -283,7 +283,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* WHATSAPP FLOAT BUTTON */
-.wa-float{position:fixed;bottom:2rem;right:2rem;left:auto;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;}
+.wa-float{position:fixed;bottom:2rem;left:2rem;z-index:400;display:flex;flex-direction:column;align-items:flex-start;gap:0.6rem;}
 .wa-bubble{background:#25D366;color:#fff;border:none;border-radius:50px;padding:0.85rem 1.4rem;display:flex;align-items:center;gap:0.7rem;cursor:pointer;box-shadow:0 8px 30px rgba(37,211,102,0.4);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;text-decoration:none;}
 .wa-bubble:hover{background:#20b858;transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.5);}
 .wa-bubble svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
@@ -321,7 +321,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 .wa-checkout-btn svg{width:16px;height:16px;fill:#fff;}
 
 /* WHATSAPP FLOAT BUTTON */
-.wa-float{position:fixed;bottom:2rem;right:2rem;left:auto;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;}
+.wa-float{position:fixed;bottom:2rem;left:2rem;z-index:400;display:flex;flex-direction:column;align-items:flex-start;gap:0.6rem;}
 .wa-bubble{background:#25D366;color:#fff;border:none;border-radius:50px;padding:0.85rem 1.4rem;display:flex;align-items:center;gap:0.7rem;cursor:pointer;box-shadow:0 8px 30px rgba(37,211,102,0.4);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
 .wa-bubble:hover{background:#20b858;transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.5);}
 .wa-bubble svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
@@ -565,7 +565,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .fcopy{font-size:0.62rem;}
 
   /* WHATSAPP FLOAT */
-  .wa-float{bottom:1.2rem;right:1rem;left:auto;gap:0.4rem;align-items:flex-end;}
+  .wa-float{bottom:1.2rem;left:1rem;gap:0.4rem;}
   .wa-label{font-size:0.6rem;padding:0.3rem 0.7rem;}
   .wa-bubble{padding:0.75rem 1.1rem;font-size:0.6rem;letter-spacing:0.1em;gap:0.5rem;}
   .wa-bubble svg{width:18px;height:18px;}
@@ -605,3 +605,9 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .ci{grid-template-columns:70px 1fr auto;gap:0.8rem;}
   .ci-img{width:70px;height:70px;font-size:1.8rem;}
 }
+/* ── FOOTER CONTACT US COLUMN ── */
+.ft-contact-title{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:1.5rem;}
+.ft-contact-group{margin-bottom:1.2rem;}
+.ft-contact-label{display:block;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;}
+.ft-contact-link{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.3s;}
+.ft-contact-link:hover{color:var(--gold);}
