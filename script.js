@@ -168,18 +168,27 @@ function renderShop(){
 function renderPagination(total){
   const bar=document.getElementById('pgBar');
   if(total<=1){bar.innerHTML='';return;}
-  let h=`<button class="pg-btn arrow" onclick="changePage(${curPage-1})" ${curPage===1?'disabled':''}>‹</button>`;
+  const atFirst=(curPage===1);
+  const atLast=(curPage===total);
+  let h=`<button class="pg-btn arrow${atFirst?' pg-disabled':''}" onclick="if(${curPage}>1)changePage(${curPage-1})">‹</button>`;
   for(let i=1;i<=total;i++){
     if(i===1||i===total||Math.abs(i-curPage)<=1){
       h+=`<button class="pg-btn${i===curPage?' active':''}" onclick="changePage(${i})">${i}</button>`;
     } else if(Math.abs(i-curPage)===2){
-      h+=`<button class="pg-btn" style="pointer-events:none;opacity:0.4">…</button>`;
+      h+=`<button class="pg-btn pg-dots">…</button>`;
     }
   }
-  h+=`<button class="pg-btn arrow" onclick="changePage(${curPage+1})" ${curPage===total?'disabled':''}>›</button>`;
+  h+=`<button class="pg-btn arrow${atLast?' pg-disabled':''}" onclick="if(${curPage}<${total})changePage(${curPage+1})">›</button>`;
   bar.innerHTML=h;
 }
-function changePage(n){curPage=n;renderShop();window.scrollTo(0,300);}
+function changePage(n){
+  const all=getFiltered();
+  const totalPages=Math.ceil(all.length/PER_PAGE);
+  if(n<1||n>totalPages)return;
+  curPage=n;
+  renderShop();
+  window.scrollTo({top:300,behavior:'smooth'});
+}
 
 // ════════════════════════════════
 // CARD HTML
@@ -237,7 +246,7 @@ function openDetail(id){
     demojiEl.style.fontSize='0';
     const img=document.createElement('img');
     img.src=p.imgSrc; img.alt=p.name;
-    img.style.cssText='width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(0,0,0,0.18));';
+    img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center top;display:block;';
     demojiEl.appendChild(img);
   } else {
     demojiEl.innerHTML=''; demojiEl.style.fontSize='';
@@ -378,7 +387,7 @@ function closeMobMenu(){
 // WHATSAPP
 // ════════════════════════════════
 // ⚠️  Replace with your actual WhatsApp number (include country code, no + or spaces)
-const WA_NUMBER = '16467839583';
+const WA_NUMBER = '18777374672';
 
 function openWaModal(){
   populateWaPreview();

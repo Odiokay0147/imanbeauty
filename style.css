@@ -109,8 +109,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ci-img.c-perfume{background:linear-gradient(135deg,#fdf8f2,#f7e8d6);}
 
 /* Product image (photo-based) */
-.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.35s;}
-.pcard:hover .pimg-photo{transform:scale(1.04);}
+.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.35s;}
+.pcard:hover .pimg-photo{transform:scale(1.07);}
 
 /* Perfume sub-info in card */
 .pcard-brand{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.1rem;}
@@ -159,7 +159,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .breadcrumb s{color:var(--gold);cursor:pointer;text-decoration:none;}
 .breadcrumb s:hover{text-decoration:underline;}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
-.dimg{height:500px;display:flex;align-items:center;justify-content:center;position:relative;font-size:8rem;}
+.dimg{height:500px;display:flex;align-items:center;justify-content:center;position:relative;font-size:8rem;overflow:hidden;}
+/* Detail page photo fills container */
+.dimg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+
 .dimg.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
 .dimg.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
 .dimg.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
@@ -449,8 +452,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .pinfo{padding:0.75rem 0.8rem;}
   .pname{font-size:0.9rem;}
   .pcat{font-size:0.5rem;margin-bottom:0.2rem;}
-  .pcard-brand{font-size:0.5rem;}
-  .pcard-notes{font-size:0.5rem;display:none;}
+  .pcard-notes{display:none;}
   .pprice{font-size:1rem;}
   .pstars{font-size:0.55rem;}
   .pbadge{font-size:0.45rem;padding:0.2rem 0.5rem;top:0.6rem;left:0.6rem;}
@@ -464,8 +466,8 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 .ci-img.c-perfume{background:linear-gradient(135deg,#fdf8f2,#f7e8d6);}
 
 /* Product image (photo-based) */
-.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.35s;}
-.pcard:hover .pimg-photo{transform:scale(1.04);}
+.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.35s;}
+.pcard:hover .pimg-photo{transform:scale(1.07);}
 
 /* Perfume sub-info in card */
 .pcard-brand{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.1rem;}
@@ -497,7 +499,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .detail-wrap{padding:2rem 1.2rem;}
   .breadcrumb{font-size:0.58rem;gap:0.5rem;margin-bottom:1.5rem;}
   .dgrid{grid-template-columns:1fr;gap:1.5rem;}
-  .dimg{height:260px;font-size:5rem;}
+  .dimg{height:340px;font-size:5rem;overflow:hidden;}
   .dcat{font-size:0.55rem;margin-bottom:0.6rem;}
   .dname{font-size:clamp(1.6rem,5vw,2.2rem);margin-bottom:0.6rem;}
   .dstars{font-size:0.7rem;margin-bottom:1rem;}
