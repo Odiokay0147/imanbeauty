@@ -75,13 +75,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 /* PRODUCT CARD */
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
 .pgrid-4{grid-template-columns:repeat(4,1fr);}
-.pcard{background:#fff;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;border:1px solid rgba(201,168,76,0.08);display:flex;flex-direction:column;}
+.pcard{background:#fff;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;border:1px solid rgba(201,168,76,0.08);}
 .pcard:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(0,0,0,0.1);}
 .pbadge{position:absolute;top:1rem;left:1rem;z-index:2;background:var(--gold);color:#fff;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.7rem;}
 .pbadge.sale{background:var(--rose);}
 .pbadge.new{background:var(--black);}
 /* colour-coded category backgrounds */
-.pimg{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;}
+.pimg{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .pimg.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
 .pimg.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
 .pimg.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
@@ -95,10 +95,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .oadd{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.7);padding:0.7rem 1.8rem;background:transparent;cursor:pointer;transition:all 0.2s;}
 .oadd:hover{background:#fff;color:var(--gold);}
 .oview{font-size:0.65rem;color:rgba(255,255,255,0.8);text-decoration:underline;cursor:pointer;background:none;border:none;font-family:'Lato',sans-serif;letter-spacing:0.05em;}
-.pinfo{padding:1.3rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+.pinfo{padding:1.3rem 1.5rem;}
 .pname{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--black);margin-bottom:0.25rem;}
 .pcat{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(42,42,42,0.4);margin-bottom:0.7rem;}
-.pfoot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.pfoot{display:flex;align-items:center;justify-content:space-between;}
 .pprice{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--gold);}
 .pstars{font-size:0.62rem;color:var(--gold);}
 
@@ -109,7 +109,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ci-img.c-perfume{background:linear-gradient(135deg,#fdf8f2,#f7e8d6);}
 
 /* Product image (photo-based) */
-.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.35s;}
+.pimg-photo{width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.13));transition:transform 0.35s;}
 .pcard:hover .pimg-photo{transform:scale(1.07);}
 
 /* Perfume sub-info in card */
@@ -159,10 +159,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .breadcrumb s{color:var(--gold);cursor:pointer;text-decoration:none;}
 .breadcrumb s:hover{text-decoration:underline;}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
-.dimg{height:500px;display:flex;align-items:center;justify-content:center;position:relative;font-size:8rem;overflow:hidden;}
-/* Detail page photo fills container */
-.dimg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-
+.dimg{height:500px;display:flex;align-items:center;justify-content:center;position:relative;font-size:8rem;}
 .dimg.c-makeup{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
 .dimg.c-skincare{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
 .dimg.c-hair{background:linear-gradient(135deg,#fff8e1,#ffecb3);}
@@ -363,13 +360,13 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 .mob-menu-btn.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
 .mob-menu-btn.open span:nth-child(2){opacity:0;}
 .mob-menu-btn.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-.mob-menu{position:fixed;inset:0;background:var(--black);z-index:190;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.77,0,0.175,1);display:flex;flex-direction:column;padding-top:72px;}
+.mob-menu{position:fixed;inset:0;background:#111010;z-index:190;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.77,0,0.175,1);display:flex;flex-direction:column;padding-top:72px;}
 .mob-menu.open{transform:translateX(0);}
-.mob-menu-inner{padding:2.5rem 2rem;display:flex;flex-direction:column;height:100%;overflow-y:auto;}
-.mob-brand{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:0.25em;color:#fff;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(201,168,76,0.2);}
+.mob-menu-inner{padding:2.5rem 2rem;display:flex;flex-direction:column;height:100%;overflow-y:auto;background:#111010;}
+.mob-brand{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:0.25em;color:#E8C97A;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(201,168,76,0.3);}
 .mob-brand span{color:var(--gold);}
 .mob-nav{display:flex;flex-direction:column;gap:0;}
-.mob-nav a{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:rgba(255,255,255,0.75);padding:0.9rem 0;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:color 0.2s;display:flex;align-items:center;justify-content:space-between;}
+.mob-nav a{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:#E8C97A;padding:0.9rem 0;border-bottom:1px solid rgba(201,168,76,0.25);cursor:pointer;transition:color 0.2s;display:flex;align-items:center;justify-content:space-between;}
 .mob-nav a::after{content:'→';font-size:1rem;color:var(--gold);opacity:0;transition:opacity 0.2s,transform 0.2s;transform:translateX(-5px);}
 .mob-nav a:hover{color:#fff;}
 .mob-nav a:hover::after{opacity:1;transform:translateX(0);}
@@ -447,12 +444,11 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   /* PRODUCT GRID */
   .pgrid{grid-template-columns:repeat(2,1fr);gap:0.9rem;}
   .pgrid-4{grid-template-columns:repeat(2,1fr);gap:0.9rem;}
-  .pimg{height:200px;}
+  .pimg{height:160px;}
   .pimg-emoji{font-size:2.4rem;}
-  .pinfo{padding:0.75rem 0.8rem;}
+  .pinfo{padding:0.9rem 1rem;}
   .pname{font-size:0.9rem;}
-  .pcat{font-size:0.5rem;margin-bottom:0.2rem;}
-  .pcard-notes{display:none;}
+  .pcat{font-size:0.5rem;margin-bottom:0.4rem;}
   .pprice{font-size:1rem;}
   .pstars{font-size:0.55rem;}
   .pbadge{font-size:0.45rem;padding:0.2rem 0.5rem;top:0.6rem;left:0.6rem;}
@@ -466,7 +462,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 .ci-img.c-perfume{background:linear-gradient(135deg,#fdf8f2,#f7e8d6);}
 
 /* Product image (photo-based) */
-.pimg-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.35s;}
+.pimg-photo{width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.13));transition:transform 0.35s;}
 .pcard:hover .pimg-photo{transform:scale(1.07);}
 
 /* Perfume sub-info in card */
@@ -499,7 +495,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
   .detail-wrap{padding:2rem 1.2rem;}
   .breadcrumb{font-size:0.58rem;gap:0.5rem;margin-bottom:1.5rem;}
   .dgrid{grid-template-columns:1fr;gap:1.5rem;}
-  .dimg{height:340px;font-size:5rem;overflow:hidden;}
+  .dimg{height:260px;font-size:5rem;}
   .dcat{font-size:0.55rem;margin-bottom:0.6rem;}
   .dname{font-size:clamp(1.6rem,5vw,2.2rem);margin-bottom:0.6rem;}
   .dstars{font-size:0.7rem;margin-bottom:1rem;}
@@ -602,7 +598,7 @@ footer{background:#0a0a0a;padding:5rem 5rem 2rem;}
 @media(max-width:400px){
   .cat-grid{grid-template-columns:repeat(3,1fr);gap:0.6rem;}
   .pgrid,.pgrid-4{grid-template-columns:repeat(2,1fr);gap:0.7rem;}
-  .pimg{height:180px;}
+  .pimg{height:140px;}
   .pimg-emoji{font-size:2rem;}
   .hero-btns{gap:0.6rem;}
   .hero-left{padding:4.5rem 1.2rem 2.5rem;}
