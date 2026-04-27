@@ -87,13 +87,20 @@ let curPage=1; const PER_PAGE=12;
 // ════════════════════════════════
 // NAVIGATION
 // ════════════════════════════════
-function goPage(n){
+// AFTER
+function goPage(n, pushHistory = true){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('pg-'+n).classList.add('active');
   window.scrollTo(0,0);
   if(n==='shop') renderShop();
   if(n==='cart') renderCart();
   if(n==='home') initRv();
+
+  // Push a new history entry so the browser back/forward buttons work
+  if(pushHistory){
+    const state = { page: n, prodId: n === 'detail' ? curProd?.id : null };
+    history.pushState(state, '', '#' + n);
+  }
 }
 function catGo(c){
   filters.cats=[c];
@@ -242,7 +249,9 @@ function openDetail(id){
   // related
   const rel=products.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,4);
   document.getElementById('relGrid').innerHTML=rel.map(x=>cardHTML(x)).join('');
-  goPage('detail');
+  // Replace just the last line of openDetail:
+  goPage('detail', false);
+  history.pushState({ page: 'detail', prodId: p.id }, '', '#detail-' + p.id);;
 }
 function dq(d){dqty=Math.max(1,dqty+d);document.getElementById('qnum').textContent=dqty;}
 function addCurrent(){
@@ -451,3 +460,29 @@ window.addEventListener('DOMContentLoaded', () => {
     renderShop(); 
     updateCartCount();
 });
+
+window.addEventListener('popstate', (e) => {
+  const state = e.state;
+  if(!state){
+    goPage('home', false);
+    return;
+  }
+  if(state.page === 'detail' && state.prodId){
+    openDetail(state.prodId);
+    // Prevent double push — override last line
+    history.replaceState(state, '', location.hash);
+  } else {
+    goPage(state.page, false);
+  }
+});
+
+// On load, check hash
+const hash = location.hash.replace('#','');
+if(hash.startsWith('detail-')){
+  const id = parseInt(hash.replace('detail-',''));
+  if(id) openDetail(id);
+} else if(['shop','cart','about'].includes(hash)){
+  goPage(hash, false);
+} else {
+  goPage('home', false); // default — replaces the initial renderHome() call
+}
